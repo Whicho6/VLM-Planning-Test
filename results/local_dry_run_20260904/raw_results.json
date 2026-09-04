@@ -1,0 +1,7090 @@
+[
+  {
+    "task_id": "task_025",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "拿起计算器。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "PICK(calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.386454+00:00",
+    "raw_model_output": "PICK(calculator)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [],
+      "held": "calculator",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "calculator"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.387453+00:00"
+  },
+  {
+    "task_id": "task_032",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "把笔放到雨伞的右边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.388454+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.389452+00:00"
+  },
+  {
+    "task_id": "task_012",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "把雨伞放到橡皮的左边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.390490+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.390490+00:00"
+  },
+  {
+    "task_id": "task_026",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "把眼镜放到笔的右边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "pen"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.391495+00:00",
+    "raw_model_output": "把眼镜放到笔的右边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "glasses",
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "glasses"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "glasses": [
+          "right",
+          "pen"
+        ]
+      },
+      "events": [
+        [
+          "glasses",
+          "right",
+          "pen"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses",
+        "glasses",
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.394506+00:00"
+  },
+  {
+    "task_id": "task_016",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "把眼镜放到计算器的右边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.395501+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.396500+00:00"
+  },
+  {
+    "task_id": "task_028",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "把纸巾放到眼镜的左边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.397499+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.397499+00:00"
+  },
+  {
+    "task_id": "task_005",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "拿起眼镜。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.398966+00:00",
+    "raw_model_output": "拿起眼镜。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": "glasses",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.398966+00:00"
+  },
+  {
+    "task_id": "task_024",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "把纸巾放到笔的右边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.400970+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.400970+00:00"
+  },
+  {
+    "task_id": "task_029",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "拿起橡皮。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "PICK(eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.401970+00:00",
+    "raw_model_output": "PICK(eraser)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [],
+      "held": "eraser",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.402971+00:00"
+  },
+  {
+    "task_id": "task_020",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "把雨伞放到纸巾的左边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.403644+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.404650+00:00"
+  },
+  {
+    "task_id": "task_008",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "把笔放到饮料瓶的右边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.405650+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.405650+00:00"
+  },
+  {
+    "task_id": "task_037",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "抓取鼠标。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.406941+00:00",
+    "raw_model_output": "抓取鼠标。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": "mouse",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.407941+00:00"
+  },
+  {
+    "task_id": "task_030",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "把纸巾放到橡皮的左边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_LEFT(tissue, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.408941+00:00",
+    "raw_model_output": "PICK(tissue)\nPLACE_LEFT(tissue, eraser)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "tissue",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "left",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.408941+00:00"
+  },
+  {
+    "task_id": "task_020",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "把雨伞放到纸巾的左边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.411035+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.411035+00:00"
+  },
+  {
+    "task_id": "task_022",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "把橡皮放到雨伞的左边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.412037+00:00",
+    "raw_model_output": "把橡皮放到雨伞的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "umbrella"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "left",
+          "umbrella"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "umbrella"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.413546+00:00"
+  },
+  {
+    "task_id": "task_032",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "把笔放到雨伞的右边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.415077+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.415077+00:00"
+  },
+  {
+    "task_id": "task_013",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "拿起笔。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(pen)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.417077+00:00",
+    "raw_model_output": "PICK(pen)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": "pen",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.417077+00:00"
+  },
+  {
+    "task_id": "task_029",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "拿起橡皮。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "PICK(eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.419873+00:00",
+    "raw_model_output": "拿起橡皮。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [],
+      "held": "eraser",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.419873+00:00"
+  },
+  {
+    "task_id": "task_039",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "把笔放到鼠标的右边，然后把雨伞放到饮料瓶的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_RIGHT(pen, mouse)",
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "right",
+        "target": "mouse"
+      },
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.421981+00:00",
+    "raw_model_output": "把笔放到鼠标的右边，然后把雨伞放到饮料瓶的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "pen",
+            "mouse"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "umbrella",
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "right",
+          "mouse"
+        ],
+        "umbrella": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [
+        [
+          "pen",
+          "right",
+          "mouse"
+        ],
+        [
+          "umbrella",
+          "left",
+          "bottle"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen",
+        "pen",
+        "mouse",
+        "umbrella",
+        "umbrella",
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.421981+00:00"
+  },
+  {
+    "task_id": "task_001",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "拿起纸巾。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.424062+00:00",
+    "raw_model_output": "PICK(tissue)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": "tissue",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.424062+00:00"
+  },
+  {
+    "task_id": "task_036",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "把鼠标放到眼镜的左边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.426139+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.426139+00:00"
+  },
+  {
+    "task_id": "task_027",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "把饮料瓶放到计算器的右边，然后把笔放到眼镜的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "PICK(bottle)",
+      "PLACE_RIGHT(bottle, calculator)",
+      "PICK(pen)",
+      "PLACE_LEFT(pen, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "right",
+        "target": "calculator"
+      },
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.428204+00:00",
+    "raw_model_output": "PICK(bottle)\nPLACE_RIGHT(bottle, calculator)\nPICK(pen)\nPLACE_LEFT(pen, glasses)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "bottle"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "bottle",
+            "calculator"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "pen",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "right",
+          "calculator"
+        ],
+        "pen": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "bottle",
+          "right",
+          "calculator"
+        ],
+        [
+          "pen",
+          "left",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "bottle",
+        "bottle",
+        "calculator",
+        "pen",
+        "pen",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.428722+00:00"
+  },
+  {
+    "task_id": "task_010",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "把橡皮放到饮料瓶的右边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_RIGHT(eraser, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "right",
+        "target": "bottle"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.430271+00:00",
+    "raw_model_output": "把橡皮放到饮料瓶的右边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "eraser",
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "eraser"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "eraser": [
+          "right",
+          "bottle"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "right",
+          "bottle"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.430271+00:00"
+  },
+  {
+    "task_id": "task_034",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "把眼镜放到橡皮的右边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.432648+00:00",
+    "raw_model_output": "PICK(glasses)\nPLACE_RIGHT(glasses, eraser)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "glasses",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "glasses"
+        ],
+        "calculator": [
+          "left",
+          "eraser"
+        ],
+        "glasses": [
+          "right",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "glasses",
+          "right",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses",
+        "glasses",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.433648+00:00"
+  },
+  {
+    "task_id": "task_010",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "把橡皮放到饮料瓶的右边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_RIGHT(eraser, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "right",
+        "target": "bottle"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.435648+00:00",
+    "raw_model_output": "PICK(eraser)\nPLACE_RIGHT(eraser, bottle)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "eraser",
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "eraser"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "eraser": [
+          "right",
+          "bottle"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "right",
+          "bottle"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.435648+00:00"
+  },
+  {
+    "task_id": "task_011",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "把眼镜放到鼠标的右边，然后把饮料瓶放到橡皮的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, mouse)",
+      "PICK(bottle)",
+      "PLACE_LEFT(bottle, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "mouse"
+      },
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.436649+00:00",
+    "raw_model_output": "把眼镜放到鼠标的右边，然后把饮料瓶放到橡皮的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "glasses",
+            "mouse"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "bottle"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "bottle",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "right",
+          "mouse"
+        ],
+        "bottle": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "glasses",
+          "right",
+          "mouse"
+        ],
+        [
+          "bottle",
+          "left",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses",
+        "glasses",
+        "mouse",
+        "bottle",
+        "bottle",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.438039+00:00"
+  },
+  {
+    "task_id": "task_022",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "把橡皮放到雨伞的左边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.440039+00:00",
+    "raw_model_output": "PICK(eraser)\nPLACE_LEFT(eraser, umbrella)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "umbrella"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "left",
+          "umbrella"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "umbrella"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.440039+00:00"
+  },
+  {
+    "task_id": "task_024",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "把纸巾放到笔的右边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.443094+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.444096+00:00"
+  },
+  {
+    "task_id": "task_017",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "拿起饮料瓶。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "PICK(bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.446103+00:00",
+    "raw_model_output": "PICK(bottle)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [],
+      "held": "bottle",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.446103+00:00"
+  },
+  {
+    "task_id": "task_031",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "把纸巾放到橡皮的右边，然后把鼠标放到雨伞的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, eraser)",
+      "PICK(mouse)",
+      "PLACE_LEFT(mouse, umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "eraser"
+      },
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.448101+00:00",
+    "raw_model_output": "PICK(tissue)\nPLACE_RIGHT(tissue, eraser)\nPICK(mouse)\nPLACE_LEFT(mouse, umbrella)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "tissue",
+            "eraser"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "mouse",
+            "umbrella"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "right",
+          "eraser"
+        ],
+        "mouse": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "right",
+          "eraser"
+        ],
+        [
+          "mouse",
+          "left",
+          "umbrella"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "eraser",
+        "mouse",
+        "mouse",
+        "umbrella"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.449101+00:00"
+  },
+  {
+    "task_id": "task_017",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "拿起饮料瓶。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "PICK(bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.451100+00:00",
+    "raw_model_output": "拿起饮料瓶。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [],
+      "held": "bottle",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.451100+00:00"
+  },
+  {
+    "task_id": "task_004",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "把眼镜放到鼠标的左边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.454106+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.455101+00:00"
+  },
+  {
+    "task_id": "task_033",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "抓取纸巾。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.457107+00:00",
+    "raw_model_output": "PICK(tissue)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": "tissue",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.458101+00:00"
+  },
+  {
+    "task_id": "task_002",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "把鼠标放到橡皮的右边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(mouse)",
+      "PLACE_RIGHT(mouse, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "right",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.460616+00:00",
+    "raw_model_output": "把鼠标放到橡皮的右边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "mouse",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "mouse": [
+          "right",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "mouse",
+          "right",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse",
+        "mouse",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.460616+00:00"
+  },
+  {
+    "task_id": "task_009",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "拿起鼠标。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.463007+00:00",
+    "raw_model_output": "拿起鼠标。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [],
+      "held": "mouse",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.463007+00:00"
+  },
+  {
+    "task_id": "task_019",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "把鼠标放到饮料瓶的右边，然后把眼镜放到纸巾的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "PICK(mouse)",
+      "PLACE_RIGHT(mouse, bottle)",
+      "PICK(glasses)",
+      "PLACE_LEFT(glasses, tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "right",
+        "target": "bottle"
+      },
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "tissue"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.465780+00:00",
+    "raw_model_output": "把鼠标放到饮料瓶的右边，然后把眼镜放到纸巾的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "mouse",
+            "bottle"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "glasses",
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "right",
+          "bottle"
+        ],
+        "glasses": [
+          "left",
+          "tissue"
+        ]
+      },
+      "events": [
+        [
+          "mouse",
+          "right",
+          "bottle"
+        ],
+        [
+          "glasses",
+          "left",
+          "tissue"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse",
+        "mouse",
+        "bottle",
+        "glasses",
+        "glasses",
+        "tissue"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.466903+00:00"
+  },
+  {
+    "task_id": "task_012",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "把雨伞放到橡皮的左边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.470117+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.470117+00:00"
+  },
+  {
+    "task_id": "task_021",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "拿起雨伞。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.472112+00:00",
+    "raw_model_output": "拿起雨伞。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": "umbrella",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "umbrella"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.472112+00:00"
+  },
+  {
+    "task_id": "task_013",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "拿起笔。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(pen)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.476627+00:00",
+    "raw_model_output": "拿起笔。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": "pen",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.476627+00:00"
+  },
+  {
+    "task_id": "task_003",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "把笔放到纸巾的右边，然后把橡皮放到鼠标的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_RIGHT(pen, tissue)",
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "right",
+        "target": "tissue"
+      },
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.480625+00:00",
+    "raw_model_output": "PICK(pen)\nPLACE_RIGHT(pen, tissue)\nPICK(eraser)\nPLACE_LEFT(eraser, mouse)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "pen",
+            "tissue"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "right",
+          "tissue"
+        ],
+        "eraser": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [
+        [
+          "pen",
+          "right",
+          "tissue"
+        ],
+        [
+          "eraser",
+          "left",
+          "mouse"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen",
+        "pen",
+        "tissue",
+        "eraser",
+        "eraser",
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.480625+00:00"
+  },
+  {
+    "task_id": "task_004",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "把眼镜放到鼠标的左边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.483427+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.483427+00:00"
+  },
+  {
+    "task_id": "task_031",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "把纸巾放到橡皮的右边，然后把鼠标放到雨伞的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, eraser)",
+      "PICK(mouse)",
+      "PLACE_LEFT(mouse, umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "eraser"
+      },
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.486400+00:00",
+    "raw_model_output": "把纸巾放到橡皮的右边，然后把鼠标放到雨伞的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "tissue",
+            "eraser"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "mouse",
+            "umbrella"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "right",
+          "eraser"
+        ],
+        "mouse": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "right",
+          "eraser"
+        ],
+        [
+          "mouse",
+          "left",
+          "umbrella"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "eraser",
+        "mouse",
+        "mouse",
+        "umbrella"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.487416+00:00"
+  },
+  {
+    "task_id": "task_037",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "抓取鼠标。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.489558+00:00",
+    "raw_model_output": "PICK(mouse)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": "mouse",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.490558+00:00"
+  },
+  {
+    "task_id": "task_005",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "拿起眼镜。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.493569+00:00",
+    "raw_model_output": "PICK(glasses)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": "glasses",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.493569+00:00"
+  },
+  {
+    "task_id": "task_027",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "把饮料瓶放到计算器的右边，然后把笔放到眼镜的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "PICK(bottle)",
+      "PLACE_RIGHT(bottle, calculator)",
+      "PICK(pen)",
+      "PLACE_LEFT(pen, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "right",
+        "target": "calculator"
+      },
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.497567+00:00",
+    "raw_model_output": "把饮料瓶放到计算器的右边，然后把笔放到眼镜的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "bottle"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "bottle",
+            "calculator"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "pen",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "right",
+          "calculator"
+        ],
+        "pen": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "bottle",
+          "right",
+          "calculator"
+        ],
+        [
+          "pen",
+          "left",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "bottle",
+        "bottle",
+        "calculator",
+        "pen",
+        "pen",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.497567+00:00"
+  },
+  {
+    "task_id": "task_011",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "把眼镜放到鼠标的右边，然后把饮料瓶放到橡皮的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, mouse)",
+      "PICK(bottle)",
+      "PLACE_LEFT(bottle, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "mouse"
+      },
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.501949+00:00",
+    "raw_model_output": "PICK(glasses)\nPLACE_RIGHT(glasses, mouse)\nPICK(bottle)\nPLACE_LEFT(bottle, eraser)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "glasses",
+            "mouse"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "bottle"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "bottle",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "right",
+          "mouse"
+        ],
+        "bottle": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "glasses",
+          "right",
+          "mouse"
+        ],
+        [
+          "bottle",
+          "left",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses",
+        "glasses",
+        "mouse",
+        "bottle",
+        "bottle",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.501949+00:00"
+  },
+  {
+    "task_id": "task_034",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "把眼镜放到橡皮的右边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.506171+00:00",
+    "raw_model_output": "把眼镜放到橡皮的右边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "glasses",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "glasses"
+        ],
+        "calculator": [
+          "left",
+          "eraser"
+        ],
+        "glasses": [
+          "right",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "glasses",
+          "right",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses",
+        "glasses",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.506171+00:00"
+  },
+  {
+    "task_id": "task_030",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "instruction": "把纸巾放到橡皮的左边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_LEFT(tissue, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.510248+00:00",
+    "raw_model_output": "把纸巾放到橡皮的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "tissue",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "left",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.510248+00:00"
+  },
+  {
+    "task_id": "task_006",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "把雨伞放到眼镜的左边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.513761+00:00",
+    "raw_model_output": "把雨伞放到眼镜的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "umbrella",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "umbrella",
+          "left",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "umbrella",
+        "umbrella",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.513761+00:00"
+  },
+  {
+    "task_id": "task_025",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "拿起计算器。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "PICK(calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.516211+00:00",
+    "raw_model_output": "拿起计算器。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [],
+      "held": "calculator",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "calculator"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.517216+00:00"
+  },
+  {
+    "task_id": "task_001",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "拿起纸巾。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.520216+00:00",
+    "raw_model_output": "拿起纸巾。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": "tissue",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.520216+00:00"
+  },
+  {
+    "task_id": "task_026",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "把眼镜放到笔的右边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "pen"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.523500+00:00",
+    "raw_model_output": "PICK(glasses)\nPLACE_RIGHT(glasses, pen)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "glasses",
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "glasses"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "glasses": [
+          "right",
+          "pen"
+        ]
+      },
+      "events": [
+        [
+          "glasses",
+          "right",
+          "pen"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "glasses",
+        "glasses",
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.523500+00:00"
+  },
+  {
+    "task_id": "task_038",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "把笔放到鼠标的左边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_LEFT(pen, mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.527823+00:00",
+    "raw_model_output": "把笔放到鼠标的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "pen",
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [
+        [
+          "pen",
+          "left",
+          "mouse"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen",
+        "pen",
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.527823+00:00"
+  },
+  {
+    "task_id": "task_019",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "把鼠标放到饮料瓶的右边，然后把眼镜放到纸巾的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "PICK(mouse)",
+      "PLACE_RIGHT(mouse, bottle)",
+      "PICK(glasses)",
+      "PLACE_LEFT(glasses, tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "right",
+        "target": "bottle"
+      },
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "tissue"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.530825+00:00",
+    "raw_model_output": "PICK(mouse)\nPLACE_RIGHT(mouse, bottle)\nPICK(glasses)\nPLACE_LEFT(glasses, tissue)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "mouse",
+            "bottle"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "glasses"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "glasses",
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "right",
+          "bottle"
+        ],
+        "glasses": [
+          "left",
+          "tissue"
+        ]
+      },
+      "events": [
+        [
+          "mouse",
+          "right",
+          "bottle"
+        ],
+        [
+          "glasses",
+          "left",
+          "tissue"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse",
+        "mouse",
+        "bottle",
+        "glasses",
+        "glasses",
+        "tissue"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.530825+00:00"
+  },
+  {
+    "task_id": "task_038",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "把笔放到鼠标的左边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_LEFT(pen, mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.535302+00:00",
+    "raw_model_output": "PICK(pen)\nPLACE_LEFT(pen, mouse)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "pen",
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [
+        [
+          "pen",
+          "left",
+          "mouse"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen",
+        "pen",
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.535302+00:00"
+  },
+  {
+    "task_id": "task_040",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "把眼镜放到饮料瓶的右边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.538445+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.539441+00:00"
+  },
+  {
+    "task_id": "task_014",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "把纸巾放到笔的左边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_LEFT(tissue, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.542457+00:00",
+    "raw_model_output": "把纸巾放到笔的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "tissue",
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "left",
+          "pen"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.542457+00:00"
+  },
+  {
+    "task_id": "task_018",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "把纸巾放到眼镜的右边。",
+    "category": "spatial",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.547609+00:00",
+    "raw_model_output": "把纸巾放到眼镜的右边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "tissue",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "tissue"
+        ],
+        "mouse": [
+          "left",
+          "glasses"
+        ],
+        "tissue": [
+          "right",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "right",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.547609+00:00"
+  },
+  {
+    "task_id": "task_023",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "把橡皮放到雨伞的右边，然后把计算器放到笔的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_RIGHT(eraser, umbrella)",
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "right",
+        "target": "umbrella"
+      },
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.551611+00:00",
+    "raw_model_output": "把橡皮放到雨伞的右边，然后把计算器放到笔的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "eraser",
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "calculator",
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "right",
+          "umbrella"
+        ],
+        "calculator": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "right",
+          "umbrella"
+        ],
+        [
+          "calculator",
+          "left",
+          "pen"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "umbrella",
+        "calculator",
+        "calculator",
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.551611+00:00"
+  },
+  {
+    "task_id": "task_021",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "拿起雨伞。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.556638+00:00",
+    "raw_model_output": "PICK(umbrella)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": "umbrella",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "umbrella"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.556638+00:00"
+  },
+  {
+    "task_id": "task_023",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "instruction": "把橡皮放到雨伞的右边，然后把计算器放到笔的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_RIGHT(eraser, umbrella)",
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "right",
+        "target": "umbrella"
+      },
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.560353+00:00",
+    "raw_model_output": "PICK(eraser)\nPLACE_RIGHT(eraser, umbrella)\nPICK(calculator)\nPLACE_LEFT(calculator, pen)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "eraser",
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "calculator",
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "umbrella": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "eraser": [
+          "right",
+          "umbrella"
+        ],
+        "calculator": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "right",
+          "umbrella"
+        ],
+        [
+          "calculator",
+          "left",
+          "pen"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "umbrella",
+        "calculator",
+        "calculator",
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.561357+00:00"
+  },
+  {
+    "task_id": "task_007",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "把雨伞放到眼镜的右边，然后把计算器放到饮料瓶的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_RIGHT(umbrella, glasses)",
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "right",
+        "target": "glasses"
+      },
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.565354+00:00",
+    "raw_model_output": "把雨伞放到眼镜的右边，然后把计算器放到饮料瓶的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "umbrella",
+            "glasses"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "calculator",
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "right",
+          "glasses"
+        ],
+        "calculator": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [
+        [
+          "umbrella",
+          "right",
+          "glasses"
+        ],
+        [
+          "calculator",
+          "left",
+          "bottle"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "umbrella",
+        "umbrella",
+        "glasses",
+        "calculator",
+        "calculator",
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.565354+00:00"
+  },
+  {
+    "task_id": "task_039",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "把笔放到鼠标的右边，然后把雨伞放到饮料瓶的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_RIGHT(pen, mouse)",
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "right",
+        "target": "mouse"
+      },
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.569652+00:00",
+    "raw_model_output": "PICK(pen)\nPLACE_RIGHT(pen, mouse)\nPICK(umbrella)\nPLACE_LEFT(umbrella, bottle)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "pen",
+            "mouse"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "umbrella",
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "right",
+          "mouse"
+        ],
+        "umbrella": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [
+        [
+          "pen",
+          "right",
+          "mouse"
+        ],
+        [
+          "umbrella",
+          "left",
+          "bottle"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen",
+        "pen",
+        "mouse",
+        "umbrella",
+        "umbrella",
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.569652+00:00"
+  },
+  {
+    "task_id": "task_035",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "把计算器放到纸巾的右边，然后把橡皮放到眼镜的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(calculator)",
+      "PLACE_RIGHT(calculator, tissue)",
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "right",
+        "target": "tissue"
+      },
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.574902+00:00",
+    "raw_model_output": "把计算器放到纸巾的右边，然后把橡皮放到眼镜的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "calculator",
+            "tissue"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "right",
+          "tissue"
+        ],
+        "eraser": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "calculator",
+          "right",
+          "tissue"
+        ],
+        [
+          "eraser",
+          "left",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "calculator",
+        "calculator",
+        "tissue",
+        "eraser",
+        "eraser",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.574902+00:00"
+  },
+  {
+    "task_id": "task_033",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "抓取纸巾。",
+    "category": "single_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.579702+00:00",
+    "raw_model_output": "抓取纸巾。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": "tissue",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.580092+00:00"
+  },
+  {
+    "task_id": "task_015",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "把纸巾放到笔的右边，然后把雨伞放到计算器的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, pen)",
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "pen"
+      },
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "calculator"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.584763+00:00",
+    "raw_model_output": "PICK(tissue)\nPLACE_RIGHT(tissue, pen)\nPICK(umbrella)\nPLACE_LEFT(umbrella, calculator)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "tissue",
+            "pen"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "umbrella",
+            "calculator"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "right",
+          "pen"
+        ],
+        "umbrella": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "right",
+          "pen"
+        ],
+        [
+          "umbrella",
+          "left",
+          "calculator"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "pen",
+        "umbrella",
+        "umbrella",
+        "calculator"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.584763+00:00"
+  },
+  {
+    "task_id": "task_014",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "把纸巾放到笔的左边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_LEFT(tissue, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.590085+00:00",
+    "raw_model_output": "PICK(tissue)\nPLACE_LEFT(tissue, pen)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "tissue",
+            "pen"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "left",
+          "pen"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "pen"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.590085+00:00"
+  },
+  {
+    "task_id": "task_036",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "把鼠标放到眼镜的左边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.594725+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.595990+00:00"
+  },
+  {
+    "task_id": "task_040",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "instruction": "把眼镜放到饮料瓶的右边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.601000+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "mouse": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.601000+00:00"
+  },
+  {
+    "task_id": "task_003",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "把笔放到纸巾的右边，然后把橡皮放到鼠标的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_RIGHT(pen, tissue)",
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "right",
+        "target": "tissue"
+      },
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.607090+00:00",
+    "raw_model_output": "把笔放到纸巾的右边，然后把橡皮放到鼠标的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "pen",
+            "tissue"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "right",
+          "tissue"
+        ],
+        "eraser": [
+          "left",
+          "mouse"
+        ]
+      },
+      "events": [
+        [
+          "pen",
+          "right",
+          "tissue"
+        ],
+        [
+          "eraser",
+          "left",
+          "mouse"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "pen",
+        "pen",
+        "tissue",
+        "eraser",
+        "eraser",
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.607090+00:00"
+  },
+  {
+    "task_id": "task_028",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "instruction": "把纸巾放到眼镜的左边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.611601+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "calculator": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "pen"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.612598+00:00"
+  },
+  {
+    "task_id": "task_006",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "把雨伞放到眼镜的左边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.617596+00:00",
+    "raw_model_output": "PICK(umbrella)\nPLACE_LEFT(umbrella, glasses)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "umbrella",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "umbrella",
+          "left",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "umbrella",
+        "umbrella",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.617596+00:00"
+  },
+  {
+    "task_id": "task_035",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "instruction": "把计算器放到纸巾的右边，然后把橡皮放到眼镜的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(calculator)",
+      "PLACE_RIGHT(calculator, tissue)",
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "right",
+        "target": "tissue"
+      },
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.621596+00:00",
+    "raw_model_output": "PICK(calculator)\nPLACE_RIGHT(calculator, tissue)\nPICK(eraser)\nPLACE_LEFT(eraser, glasses)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "calculator",
+            "tissue"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "right",
+          "tissue"
+        ],
+        "eraser": [
+          "left",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "calculator",
+          "right",
+          "tissue"
+        ],
+        [
+          "eraser",
+          "left",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "calculator",
+        "calculator",
+        "tissue",
+        "eraser",
+        "eraser",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.622599+00:00"
+  },
+  {
+    "task_id": "task_007",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "把雨伞放到眼镜的右边，然后把计算器放到饮料瓶的左边。",
+    "category": "multi_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_RIGHT(umbrella, glasses)",
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "right",
+        "target": "glasses"
+      },
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.626599+00:00",
+    "raw_model_output": "PICK(umbrella)\nPLACE_RIGHT(umbrella, glasses)\nPICK(calculator)\nPLACE_LEFT(calculator, bottle)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "umbrella",
+            "glasses"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "calculator",
+            "bottle"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "right",
+          "glasses"
+        ],
+        "calculator": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [
+        [
+          "umbrella",
+          "right",
+          "glasses"
+        ],
+        [
+          "calculator",
+          "left",
+          "bottle"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "umbrella",
+        "umbrella",
+        "glasses",
+        "calculator",
+        "calculator",
+        "bottle"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.627608+00:00"
+  },
+  {
+    "task_id": "task_009",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "instruction": "拿起鼠标。",
+    "category": "single_step",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.631595+00:00",
+    "raw_model_output": "PICK(mouse)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "eraser": [
+          "left",
+          "glasses"
+        ],
+        "glasses": [
+          "left",
+          "bottle"
+        ]
+      },
+      "events": [],
+      "held": "mouse",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.631595+00:00"
+  },
+  {
+    "task_id": "task_015",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "把纸巾放到笔的右边，然后把雨伞放到计算器的左边。",
+    "category": "multi_step",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, pen)",
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "pen"
+      },
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "calculator"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.637036+00:00",
+    "raw_model_output": "把纸巾放到笔的右边，然后把雨伞放到计算器的左边。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "tissue",
+            "pen"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "umbrella"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "umbrella",
+            "calculator"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "right",
+          "pen"
+        ],
+        "umbrella": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "right",
+          "pen"
+        ],
+        [
+          "umbrella",
+          "left",
+          "calculator"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "pen",
+        "umbrella",
+        "umbrella",
+        "calculator"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.637036+00:00"
+  },
+  {
+    "task_id": "task_016",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "instruction": "把眼镜放到计算器的右边。",
+    "category": "impossible",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella",
+      "bottle"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.642321+00:00",
+    "raw_model_output": "INVALID_TASK",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "pen": [
+          "left",
+          "calculator"
+        ],
+        "calculator": [
+          "left",
+          "tissue"
+        ],
+        "tissue": [
+          "left",
+          "umbrella"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.642321+00:00"
+  },
+  {
+    "task_id": "task_018",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "instruction": "把纸巾放到眼镜的右边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "glasses"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.646917+00:00",
+    "raw_model_output": "PICK(tissue)\nPLACE_RIGHT(tissue, glasses)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "tissue"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "tissue",
+            "glasses"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "bottle": [
+          "left",
+          "tissue"
+        ],
+        "mouse": [
+          "left",
+          "glasses"
+        ],
+        "tissue": [
+          "right",
+          "glasses"
+        ]
+      },
+      "events": [
+        [
+          "tissue",
+          "right",
+          "glasses"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue",
+        "tissue",
+        "glasses"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.646917+00:00"
+  },
+  {
+    "task_id": "task_002",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "instruction": "把鼠标放到橡皮的右边。",
+    "category": "spatial",
+    "prompt_mode": "structured",
+    "scene_objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "ground_truth": [
+      "PICK(mouse)",
+      "PLACE_RIGHT(mouse, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "right",
+        "target": "eraser"
+      }
+    ],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.652888+00:00",
+    "raw_model_output": "PICK(mouse)\nPLACE_RIGHT(mouse, eraser)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "mouse",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "mouse": [
+          "right",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "mouse",
+          "right",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse",
+        "mouse",
+        "eraser"
+      ]
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.652888+00:00"
+  },
+  {
+    "task_id": "task_008",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "instruction": "把笔放到饮料瓶的右边。",
+    "category": "impossible",
+    "prompt_mode": "free_form",
+    "scene_objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "model": "MOCK_ORACLE_NOT_A_VLM",
+    "api_error": null,
+    "started_at_utc": "2026-09-04T07:25:52.657888+00:00",
+    "raw_model_output": "任务无法完成，因为场景中缺少指令要求的物体。",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "INVALID_TASK",
+          "args": []
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": true,
+    "action_validity": true,
+    "format_compliance": true,
+    "response_nonempty": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [],
+    "simulation": {
+      "state": {
+        "glasses": [
+          "left",
+          "bottle"
+        ],
+        "bottle": [
+          "left",
+          "umbrella"
+        ],
+        "umbrella": [
+          "left",
+          "calculator"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    },
+    "api_attempts": 1,
+    "duration_seconds": 0.0,
+    "token_usage": null,
+    "provider_request_id": null,
+    "completed_at_utc": "2026-09-04T07:25:52.657888+00:00"
+  }
+]

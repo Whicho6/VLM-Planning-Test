@@ -1,0 +1,265 @@
+{
+  "label": "真实 API 实验",
+  "metrics": {
+    "overall": {
+      "total_tasks": 80,
+      "scored_tasks": 80,
+      "api_errors": 0,
+      "task_planning_success": 0.8875,
+      "action_validity": 0.8875,
+      "format_compliance": 0.9125,
+      "object_hallucination_rate": 0.014598540145985401,
+      "object_reference_count": 137,
+      "hallucination_task_rate": 0.025,
+      "parse_coverage": 0.9125,
+      "failure_counts": {
+        "object_hallucination": 2,
+        "unsupported_prose": 7
+      },
+      "planning_accuracy": 0.8875,
+      "hallucination_rate": 0.014598540145985401
+    },
+    "by_category": {
+      "single_step": {
+        "total_tasks": 20,
+        "scored_tasks": 20,
+        "api_errors": 0,
+        "task_planning_success": 1.0,
+        "action_validity": 1.0,
+        "format_compliance": 1.0,
+        "object_hallucination_rate": 0.0,
+        "object_reference_count": 20,
+        "hallucination_task_rate": 0.0,
+        "parse_coverage": 1.0,
+        "failure_counts": {},
+        "planning_accuracy": 1.0,
+        "hallucination_rate": 0.0
+      },
+      "spatial": {
+        "total_tasks": 20,
+        "scored_tasks": 20,
+        "api_errors": 0,
+        "task_planning_success": 0.8,
+        "action_validity": 0.8,
+        "format_compliance": 0.8,
+        "object_hallucination_rate": 0.0,
+        "object_reference_count": 48,
+        "hallucination_task_rate": 0.0,
+        "parse_coverage": 0.8,
+        "failure_counts": {
+          "unsupported_prose": 4
+        },
+        "planning_accuracy": 0.8,
+        "hallucination_rate": 0.0
+      },
+      "multi_step": {
+        "total_tasks": 20,
+        "scored_tasks": 20,
+        "api_errors": 0,
+        "task_planning_success": 0.8,
+        "action_validity": 0.8,
+        "format_compliance": 0.85,
+        "object_hallucination_rate": 0.014705882352941176,
+        "object_reference_count": 68,
+        "hallucination_task_rate": 0.05,
+        "parse_coverage": 0.85,
+        "failure_counts": {
+          "unsupported_prose": 3,
+          "object_hallucination": 1
+        },
+        "planning_accuracy": 0.8,
+        "hallucination_rate": 0.014705882352941176
+      },
+      "impossible": {
+        "total_tasks": 20,
+        "scored_tasks": 20,
+        "api_errors": 0,
+        "task_planning_success": 0.95,
+        "action_validity": 0.95,
+        "format_compliance": 1.0,
+        "object_hallucination_rate": 1.0,
+        "object_reference_count": 1,
+        "hallucination_task_rate": 0.05,
+        "parse_coverage": 1.0,
+        "failure_counts": {
+          "object_hallucination": 1
+        },
+        "planning_accuracy": 0.95,
+        "hallucination_rate": 1.0
+      }
+    },
+    "by_prompt_mode": {
+      "free_form": {
+        "overall": {
+          "total_tasks": 40,
+          "scored_tasks": 40,
+          "api_errors": 0,
+          "task_planning_success": 0.8,
+          "action_validity": 0.8,
+          "format_compliance": 0.825,
+          "object_hallucination_rate": 0.017543859649122806,
+          "object_reference_count": 57,
+          "hallucination_task_rate": 0.025,
+          "parse_coverage": 0.825,
+          "failure_counts": {
+            "object_hallucination": 1,
+            "unsupported_prose": 7
+          },
+          "planning_accuracy": 0.8,
+          "hallucination_rate": 0.017543859649122806
+        },
+        "by_category": {
+          "single_step": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 1.0,
+            "action_validity": 1.0,
+            "format_compliance": 1.0,
+            "object_hallucination_rate": 0.0,
+            "object_reference_count": 10,
+            "hallucination_task_rate": 0.0,
+            "parse_coverage": 1.0,
+            "failure_counts": {},
+            "planning_accuracy": 1.0,
+            "hallucination_rate": 0.0
+          },
+          "spatial": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 0.6,
+            "action_validity": 0.6,
+            "format_compliance": 0.6,
+            "object_hallucination_rate": 0.0,
+            "object_reference_count": 18,
+            "hallucination_task_rate": 0.0,
+            "parse_coverage": 0.6,
+            "failure_counts": {
+              "unsupported_prose": 4
+            },
+            "planning_accuracy": 0.6,
+            "hallucination_rate": 0.0
+          },
+          "multi_step": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 0.7,
+            "action_validity": 0.7,
+            "format_compliance": 0.7,
+            "object_hallucination_rate": 0.0,
+            "object_reference_count": 28,
+            "hallucination_task_rate": 0.0,
+            "parse_coverage": 0.7,
+            "failure_counts": {
+              "unsupported_prose": 3
+            },
+            "planning_accuracy": 0.7,
+            "hallucination_rate": 0.0
+          },
+          "impossible": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 0.9,
+            "action_validity": 0.9,
+            "format_compliance": 1.0,
+            "object_hallucination_rate": 1.0,
+            "object_reference_count": 1,
+            "hallucination_task_rate": 0.1,
+            "parse_coverage": 1.0,
+            "failure_counts": {
+              "object_hallucination": 1
+            },
+            "planning_accuracy": 0.9,
+            "hallucination_rate": 1.0
+          }
+        }
+      },
+      "structured": {
+        "overall": {
+          "total_tasks": 40,
+          "scored_tasks": 40,
+          "api_errors": 0,
+          "task_planning_success": 0.975,
+          "action_validity": 0.975,
+          "format_compliance": 1.0,
+          "object_hallucination_rate": 0.0125,
+          "object_reference_count": 80,
+          "hallucination_task_rate": 0.025,
+          "parse_coverage": 1.0,
+          "failure_counts": {
+            "object_hallucination": 1
+          },
+          "planning_accuracy": 0.975,
+          "hallucination_rate": 0.0125
+        },
+        "by_category": {
+          "single_step": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 1.0,
+            "action_validity": 1.0,
+            "format_compliance": 1.0,
+            "object_hallucination_rate": 0.0,
+            "object_reference_count": 10,
+            "hallucination_task_rate": 0.0,
+            "parse_coverage": 1.0,
+            "failure_counts": {},
+            "planning_accuracy": 1.0,
+            "hallucination_rate": 0.0
+          },
+          "spatial": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 1.0,
+            "action_validity": 1.0,
+            "format_compliance": 1.0,
+            "object_hallucination_rate": 0.0,
+            "object_reference_count": 30,
+            "hallucination_task_rate": 0.0,
+            "parse_coverage": 1.0,
+            "failure_counts": {},
+            "planning_accuracy": 1.0,
+            "hallucination_rate": 0.0
+          },
+          "multi_step": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 0.9,
+            "action_validity": 0.9,
+            "format_compliance": 1.0,
+            "object_hallucination_rate": 0.025,
+            "object_reference_count": 40,
+            "hallucination_task_rate": 0.1,
+            "parse_coverage": 1.0,
+            "failure_counts": {
+              "object_hallucination": 1
+            },
+            "planning_accuracy": 0.9,
+            "hallucination_rate": 0.025
+          },
+          "impossible": {
+            "total_tasks": 10,
+            "scored_tasks": 10,
+            "api_errors": 0,
+            "task_planning_success": 1.0,
+            "action_validity": 1.0,
+            "format_compliance": 1.0,
+            "object_hallucination_rate": null,
+            "object_reference_count": 0,
+            "hallucination_task_rate": 0.0,
+            "parse_coverage": 1.0,
+            "failure_counts": {},
+            "planning_accuracy": 1.0,
+            "hallucination_rate": null
+          }
+        }
+      }
+    }
+  }
+}

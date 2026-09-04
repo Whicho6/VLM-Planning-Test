@@ -1,0 +1,354 @@
+[
+  {
+    "label": "SYNTHETIC TEST FIXTURE - NOT VLM OUTPUT",
+    "case": "object hallucination",
+    "task_id": "task_001",
+    "raw_output": "PICK(calculator)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "calculator"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": false,
+    "action_validity": false,
+    "format_compliance": true,
+    "hallucination": true,
+    "hallucinated_references": 1,
+    "object_reference_count": 1,
+    "failure_type": [
+      "object_hallucination"
+    ],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [
+        "object_hallucination"
+      ],
+      "hallucinated_objects": [
+        "calculator"
+      ],
+      "object_references": [
+        "calculator"
+      ]
+    }
+  },
+  {
+    "label": "SYNTHETIC TEST FIXTURE - NOT VLM OUTPUT",
+    "case": "invalid action",
+    "task_id": "task_001",
+    "raw_output": "FLY(tissue)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "FLY",
+          "args": [
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [
+        "illegal_action"
+      ],
+      "unparsed": []
+    },
+    "task_planning_success": false,
+    "action_validity": false,
+    "format_compliance": false,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [
+      "illegal_action"
+    ],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [
+        "illegal_action"
+      ],
+      "hallucinated_objects": [],
+      "object_references": [
+        "tissue"
+      ]
+    }
+  },
+  {
+    "label": "SYNTHETIC TEST FIXTURE - NOT VLM OUTPUT",
+    "case": "parsing failure",
+    "task_id": "task_001",
+    "raw_output": "PICK tissue",
+    "parsed_output": {
+      "actions": [],
+      "errors": [
+        "format_error"
+      ],
+      "unparsed": []
+    },
+    "task_planning_success": false,
+    "action_validity": false,
+    "format_compliance": false,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 0,
+    "failure_type": [
+      "format_error"
+    ],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": []
+    }
+  },
+  {
+    "label": "SYNTHETIC TEST FIXTURE - NOT VLM OUTPUT",
+    "case": "incorrect spatial relation",
+    "task_id": "task_002",
+    "raw_output": "PICK(mouse)\nPLACE_LEFT(mouse, eraser)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "mouse",
+            "eraser"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": false,
+    "action_validity": true,
+    "format_compliance": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 3,
+    "failure_type": [
+      "incorrect_target_state"
+    ],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ],
+        "mouse": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [
+        [
+          "mouse",
+          "left",
+          "eraser"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse",
+        "mouse",
+        "eraser"
+      ]
+    }
+  },
+  {
+    "label": "SYNTHETIC TEST FIXTURE - NOT VLM OUTPUT",
+    "case": "wrong action order",
+    "task_id": "task_003",
+    "raw_output": "PICK(eraser)\nPLACE_LEFT(eraser, mouse)\nPICK(pen)\nPLACE_RIGHT(pen, tissue)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "eraser"
+          ]
+        },
+        {
+          "action": "PLACE_LEFT",
+          "args": [
+            "eraser",
+            "mouse"
+          ]
+        },
+        {
+          "action": "PICK",
+          "args": [
+            "pen"
+          ]
+        },
+        {
+          "action": "PLACE_RIGHT",
+          "args": [
+            "pen",
+            "tissue"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": false,
+    "action_validity": true,
+    "format_compliance": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 6,
+    "failure_type": [
+      "wrong_action_order"
+    ],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "mouse": [
+          "left",
+          "pen"
+        ],
+        "eraser": [
+          "left",
+          "mouse"
+        ],
+        "pen": [
+          "right",
+          "tissue"
+        ]
+      },
+      "events": [
+        [
+          "eraser",
+          "left",
+          "mouse"
+        ],
+        [
+          "pen",
+          "right",
+          "tissue"
+        ]
+      ],
+      "held": null,
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "eraser",
+        "eraser",
+        "mouse",
+        "pen",
+        "pen",
+        "tissue"
+      ]
+    }
+  },
+  {
+    "label": "SYNTHETIC TEST FIXTURE - NOT VLM OUTPUT",
+    "case": "failure to reject impossible task",
+    "task_id": "task_004",
+    "raw_output": "PICK(mouse)",
+    "parsed_output": {
+      "actions": [
+        {
+          "action": "PICK",
+          "args": [
+            "mouse"
+          ]
+        }
+      ],
+      "errors": [],
+      "unparsed": []
+    },
+    "task_planning_success": false,
+    "action_validity": true,
+    "format_compliance": true,
+    "hallucination": false,
+    "hallucinated_references": 0,
+    "object_reference_count": 1,
+    "failure_type": [
+      "failure_to_reject_impossible"
+    ],
+    "simulation": {
+      "state": {
+        "tissue": [
+          "left",
+          "mouse"
+        ],
+        "pen": [
+          "left",
+          "eraser"
+        ]
+      },
+      "events": [],
+      "held": "mouse",
+      "invalid": [],
+      "hallucinated_objects": [],
+      "object_references": [
+        "mouse"
+      ]
+    }
+  }
+]

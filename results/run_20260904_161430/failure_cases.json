@@ -1,0 +1,942 @@
+{
+  "label": "真实 API 实验",
+  "count": 9,
+  "cases": [
+    {
+      "task_id": "task_020",
+      "scene_id": "scene_05",
+      "image": "data/images/scene_05.jpg",
+      "image_condition": "correct",
+      "instruction": "如果照片中有笔，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "bottle",
+        "tissue",
+        "mouse",
+        "glasses"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:14:49.703408+00:00",
+      "actual_input_image": "data/images/scene_05.jpg",
+      "raw_model_output": "观察图片，桌面上有：一瓶“茉莉花茶”饮料、一包纸巾、一个黑色ThinkPad鼠标、一副眼镜。在眼镜下方隐约可见一支黄色的笔（可能是铅笔或圆珠笔），位于眼镜腿内侧、靠近镜框处。\n\n根据指令：“如果照片中有笔，就拿起它；如果没有，就拒绝任务。”  \n由于图中确实存在一支笔（尽管部分被眼镜遮挡，但清晰可辨为一支细长黄色物体，符合笔的形态），因此应执行“拿起它”。\n\n【最终操作计划】  \n拿起笔",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination"
+      ],
+      "simulation": {
+        "state": {
+          "bottle": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "glasses"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "pen"
+        ],
+        "object_references": [
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 4.375,
+      "token_usage": {
+        "prompt_tokens": 1821,
+        "completion_tokens": 125,
+        "total_tokens": 1946,
+        "completion_tokens_details": {
+          "text_tokens": 125
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 219,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-a7b16278-46a9-9248-924d-54a3b6a521e2",
+      "completed_at_utc": "2026-09-04T08:14:54.078833+00:00"
+    },
+    {
+      "task_id": "task_022",
+      "scene_id": "scene_06",
+      "image": "data/images/scene_06.jpg",
+      "image_condition": "correct",
+      "instruction": "把最右边的物体放到最左边物体的左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "umbrella",
+        "pen",
+        "eraser",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, umbrella)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "umbrella"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:14:54.081513+00:00",
+      "actual_input_image": "data/images/scene_06.jpg",
+      "raw_model_output": "图片中从左到右依次是：一把折叠伞（黑色+银色）、一支笔、一块橡皮、一个计算器（CASIO）。  \n最左边的物体是**伞**，最右边的物体是**计算器**。  \n任务要求：把最右边的物体（计算器）放到最左边物体（伞）的左边。\n\n操作步骤：  \n1. 先拿起计算器；  \n2. 再把它放到伞的左边（即桌面最左侧位置，当前伞在最左，需将其左移空出位置——但根据规则，我们只需执行“放到另一物体的左边”，机械夹爪可直接放置在目标物体左侧，即使该位置原本无物）。\n\n注意：桌面空间足够，且无容器限制，允许直接放置。\n\n【最终操作计划】  \n拿起计算器  \n把计算器放到伞的左边",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "图片中从左到右依次是：一把折叠伞（黑色+银色）、一支笔、一块橡皮、一个计算器（casio）。",
+          "最左边的物体是**伞**，最右边的物体是**计算器**。",
+          "任务要求：把最右边的物体（计算器）放到最左边物体（伞）的左边。",
+          "操作步骤：",
+          "先拿起计算器；",
+          "再把它放到伞的左边（即桌面最左侧位置，当前伞在最左，需将其左移空出位置——但根据规则，我们只需执行“放到另一物体的左边”，机械夹爪可直接放置在目标物体左侧，即使该位置原本无物）。",
+          "注意：桌面空间足够，且无容器限制，允许直接放置。",
+          "【最终操作计划】",
+          "拿起计算器",
+          "把计算器放到伞的左边"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 4.422,
+      "token_usage": {
+        "prompt_tokens": 1818,
+        "completion_tokens": 178,
+        "total_tokens": 1996,
+        "completion_tokens_details": {
+          "text_tokens": 178
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 216,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-08d0a283-9c2f-9f84-ae96-0cfce073aea4",
+      "completed_at_utc": "2026-09-04T08:14:58.502828+00:00"
+    },
+    {
+      "task_id": "task_011",
+      "scene_id": "scene_03",
+      "image": "data/images/scene_03.jpg",
+      "image_condition": "correct",
+      "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "mouse",
+        "eraser",
+        "glasses",
+        "bottle"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_RIGHT(eraser, bottle)",
+        "PICK(mouse)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "right",
+          "target": "bottle"
+        },
+        {
+          "object": "mouse",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:15:21.424812+00:00",
+      "actual_input_image": "data/images/scene_03.jpg",
+      "raw_model_output": "先分析图片中的物体从左到右顺序：\n\n1. 黑色有线鼠标（ThinkPad品牌）  \n2. 红白相间的橡皮擦  \n3. 一副眼镜（镜框+镜腿，横放）  \n4. 一瓶“东方树叶”茉莉花茶饮料（透明瓶，带绿色标签）\n\n指令要求：\n- 先把“从左数第二个物体”（即橡皮擦）放到“最右边物体”（即饮料瓶）的右边；\n- 然后拿起“最左边的物体”（即鼠标）。\n\n当前桌面空间足够，可执行操作。注意：机械夹爪一次只能拿一个物体，放置前必须先抓取。所以第一步需先拿起橡皮擦，再放到饮料瓶右边；第二步再拿起鼠标。\n\n【最终操作计划】  \n拿起橡皮擦  \n把橡皮擦放到饮料瓶的右边  \n拿起鼠标",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "先分析图片中的物体从左到右顺序：",
+          "黑色有线鼠标（thinkpad品牌）",
+          "红白相间的橡皮擦",
+          "一副眼镜（镜框+镜腿，横放）",
+          "一瓶“东方树叶”茉莉花茶饮料（透明瓶，带绿色标签）",
+          "指令要求：",
+          "先把“从左数第二个物体”（即橡皮擦）放到“最右边物体”（即饮料瓶）的右边；",
+          "然后拿起“最左边的物体”（即鼠标）。",
+          "当前桌面空间足够，可执行操作。注意：机械夹爪一次只能拿一个物体，放置前必须先抓取。所以第一步需先拿起橡皮擦，再放到饮料瓶右边；第二步再拿起鼠标。",
+          "【最终操作计划】",
+          "拿起橡皮擦",
+          "把橡皮擦放到饮料瓶的右边",
+          "拿起鼠标"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "bottle"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 5.063,
+      "token_usage": {
+        "prompt_tokens": 1826,
+        "completion_tokens": 197,
+        "total_tokens": 2023,
+        "completion_tokens_details": {
+          "text_tokens": 197
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 224,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-266d6dbb-4a08-9ca9-adf7-9c9fb49a24a6",
+      "completed_at_utc": "2026-09-04T08:15:26.482152+00:00"
+    },
+    {
+      "task_id": "task_031",
+      "scene_id": "scene_08",
+      "image": "data/images/scene_08.jpg",
+      "image_condition": "correct",
+      "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+      "category": "multi_step",
+      "prompt_mode": "structured",
+      "scene_objects": [
+        "eraser",
+        "umbrella",
+        "tissue",
+        "mouse"
+      ],
+      "ground_truth": [
+        "PICK(umbrella)",
+        "PLACE_RIGHT(umbrella, mouse)",
+        "PICK(eraser)"
+      ],
+      "target_state": [
+        {
+          "object": "umbrella",
+          "relation": "right",
+          "target": "mouse"
+        },
+        {
+          "object": "eraser",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:15:29.585858+00:00",
+      "actual_input_image": "data/images/scene_08.jpg",
+      "raw_model_output": "PICK(umbrella)  \nPLACE_RIGHT(umbrella, mouse)  \nPICK(matchbox)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "umbrella"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "umbrella",
+              "mouse"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "matchbox"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 4,
+      "failure_type": [
+        "object_hallucination"
+      ],
+      "simulation": {
+        "state": {
+          "eraser": [
+            "left",
+            "umbrella"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "umbrella": [
+            "right",
+            "mouse"
+          ]
+        },
+        "events": [
+          [
+            "umbrella",
+            "right",
+            "mouse"
+          ]
+        ],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "matchbox"
+        ],
+        "object_references": [
+          "umbrella",
+          "umbrella",
+          "mouse",
+          "matchbox"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.172,
+      "token_usage": {
+        "prompt_tokens": 1852,
+        "completion_tokens": 22,
+        "total_tokens": 1874,
+        "completion_tokens_details": {
+          "text_tokens": 22
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 250,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-d82f1fc9-9aaa-99fa-b9b9-66a4753ce262",
+      "completed_at_utc": "2026-09-04T08:15:30.755260+00:00"
+    },
+    {
+      "task_id": "task_002",
+      "scene_id": "scene_01",
+      "image": "data/images/scene_01.jpg",
+      "image_condition": "correct",
+      "instruction": "把最右边的物体放到最左边物体的左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "tissue",
+        "mouse",
+        "pen",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_LEFT(eraser, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "left",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:15:34.301387+00:00",
+      "actual_input_image": "data/images/scene_01.jpg",
+      "raw_model_output": "首先分析图片中的物体从左到右排列顺序为：\n\n1. 纸巾包（最左边）\n2. 鼠标\n3. 笔\n4. 橡皮擦（最右边）\n\n指令要求：“把最右边的物体放到最左边物体的左边”。\n\n- 最右边的物体是 **橡皮擦**\n- 最左边的物体是 **纸巾包**\n- 要求将橡皮擦放到纸巾包的**左边**\n\n当前橡皮擦在纸巾包右侧，需先拿起橡皮擦，再将其放置到纸巾包左侧。\n\n注意：桌面空间足够，且无其他限制。机械夹爪可完成该操作。\n\n【最终操作计划】  \n拿起橡皮擦  \n把橡皮擦放到纸巾包的左边",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "首先分析图片中的物体从左到右排列顺序为：",
+          "纸巾包（最左边）",
+          "鼠标",
+          "笔",
+          "橡皮擦（最右边）",
+          "指令要求：“把最右边的物体放到最左边物体的左边”。",
+          "最右边的物体是 **橡皮擦**",
+          "最左边的物体是 **纸巾包**",
+          "要求将橡皮擦放到纸巾包的**左边**",
+          "当前橡皮擦在纸巾包右侧，需先拿起橡皮擦，再将其放置到纸巾包左侧。",
+          "注意：桌面空间足够，且无其他限制。机械夹爪可完成该操作。",
+          "【最终操作计划】",
+          "拿起橡皮擦",
+          "把橡皮擦放到纸巾包的左边"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 4.657,
+      "token_usage": {
+        "prompt_tokens": 1818,
+        "completion_tokens": 168,
+        "total_tokens": 1986,
+        "completion_tokens_details": {
+          "text_tokens": 168
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 216,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-d74e6ccf-3aad-9ded-af7a-c8099b251998",
+      "completed_at_utc": "2026-09-04T08:15:38.959093+00:00"
+    },
+    {
+      "task_id": "task_031",
+      "scene_id": "scene_08",
+      "image": "data/images/scene_08.jpg",
+      "image_condition": "correct",
+      "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "eraser",
+        "umbrella",
+        "tissue",
+        "mouse"
+      ],
+      "ground_truth": [
+        "PICK(umbrella)",
+        "PLACE_RIGHT(umbrella, mouse)",
+        "PICK(eraser)"
+      ],
+      "target_state": [
+        {
+          "object": "umbrella",
+          "relation": "right",
+          "target": "mouse"
+        },
+        {
+          "object": "eraser",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:15:59.409770+00:00",
+      "actual_input_image": "data/images/scene_08.jpg",
+      "raw_model_output": "首先分析图片中的物体从左到右顺序：\n\n1. 最左边：一个红色小盒（疑似火柴盒）\n2. 第二个：一把收拢的黑灰相间雨伞\n3. 第三个：一包纸巾（白色包装，印有“Clean & Soft Tissue”等字样）\n4. 最右边：一个黑色ThinkPad鼠标\n\n指令要求：\n1. 先把“从左数第二个物体”（即雨伞）放到“最右边物体”（即鼠标）的右边；\n2. 然后拿起“最左边的物体”（即红色小盒）。\n\n当前桌面空间足够，且机械夹爪可操作。先执行第一步：将雨伞移到鼠标的右边；再执行第二步：拿起红色小盒。\n\n注意：移动雨伞时，需先拿起它，再放到鼠标右侧；放置后原位置空出，不影响后续拿最左物体。\n\n【最终操作计划】  \n拿起雨伞  \n把雨伞放到鼠标的右边  \n拿起红色小盒",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "首先分析图片中的物体从左到右顺序：",
+          "最左边：一个红色小盒（疑似火柴盒）",
+          "第二个：一把收拢的黑灰相间雨伞",
+          "第三个：一包纸巾（白色包装，印有“clean & soft tissue”等字样）",
+          "最右边：一个黑色thinkpad鼠标",
+          "指令要求：",
+          "先把“从左数第二个物体”（即雨伞）放到“最右边物体”（即鼠标）的右边；",
+          "然后拿起“最左边的物体”（即红色小盒）。",
+          "当前桌面空间足够，且机械夹爪可操作。先执行第一步：将雨伞移到鼠标的右边；再执行第二步：拿起红色小盒。",
+          "注意：移动雨伞时，需先拿起它，再放到鼠标右侧；放置后原位置空出，不影响后续拿最左物体。",
+          "【最终操作计划】",
+          "拿起雨伞",
+          "把雨伞放到鼠标的右边",
+          "拿起红色小盒"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "eraser": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 5.078,
+      "token_usage": {
+        "prompt_tokens": 1826,
+        "completion_tokens": 220,
+        "total_tokens": 2046,
+        "completion_tokens_details": {
+          "text_tokens": 220
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 224,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-9839b970-f1ab-9ed2-9b20-c5524f380afe",
+      "completed_at_utc": "2026-09-04T08:16:04.484017+00:00"
+    },
+    {
+      "task_id": "task_034",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "correct",
+      "instruction": "把最右边的物体放到最左边物体的左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_LEFT(eraser, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "left",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:16:15.019695+00:00",
+      "actual_input_image": "data/images/scene_09.jpg",
+      "raw_model_output": "图片中从左到右依次是：纸巾盒、眼镜、计算器、橡皮擦。  \n最左边的物体是纸巾盒，最右边的物体是橡皮擦。  \n任务要求：把最右边的物体（橡皮擦）放到最左边物体（纸巾盒）的左边。  \n操作步骤：先拿起橡皮擦，再把它放到纸巾盒的左边。\n\n【最终操作计划】  \n拿起橡皮擦  \n把橡皮擦放到纸巾盒的左边",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "图片中从左到右依次是：纸巾盒、眼镜、计算器、橡皮擦。",
+          "最左边的物体是纸巾盒，最右边的物体是橡皮擦。",
+          "任务要求：把最右边的物体（橡皮擦）放到最左边物体（纸巾盒）的左边。",
+          "操作步骤：先拿起橡皮擦，再把它放到纸巾盒的左边。",
+          "【最终操作计划】",
+          "拿起橡皮擦",
+          "把橡皮擦放到纸巾盒的左边"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 3.188,
+      "token_usage": {
+        "prompt_tokens": 1818,
+        "completion_tokens": 107,
+        "total_tokens": 1925,
+        "completion_tokens_details": {
+          "text_tokens": 107
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 216,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-35d9da5f-ed17-9355-9618-b399da604fdd",
+      "completed_at_utc": "2026-09-04T08:16:18.203822+00:00"
+    },
+    {
+      "task_id": "task_030",
+      "scene_id": "scene_08",
+      "image": "data/images/scene_08.jpg",
+      "image_condition": "correct",
+      "instruction": "把最右边的物体放到最左边物体的左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "eraser",
+        "umbrella",
+        "tissue",
+        "mouse"
+      ],
+      "ground_truth": [
+        "PICK(mouse)",
+        "PLACE_LEFT(mouse, eraser)"
+      ],
+      "target_state": [
+        {
+          "object": "mouse",
+          "relation": "left",
+          "target": "eraser"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:16:18.208630+00:00",
+      "actual_input_image": "data/images/scene_08.jpg",
+      "raw_model_output": "首先分析图片中的物体从左到右排列顺序为：\n\n1. 红色小盒（疑似火柴盒）\n2. 折叠伞（黑灰相间）\n3. 纸巾盒（白色包装，印有“Clean & Soft Tissue”等字样）\n4. 黑色鼠标（带线，ThinkPad品牌）\n\n最左边的物体是红色小盒，最右边的物体是鼠标\n\n任务要求：把最右边的物体（鼠标）放到最左边物体（红色小盒）的左边。\n\n当前鼠标在最右边，红色小盒在最左边；要将鼠标移到红色小盒左侧，需先拿起鼠标，再将其放置在红色小盒左边。\n\n注意：桌面空间足够，无遮挡，可操作。\n\n【最终操作计划】  \n拿起鼠标  \n把鼠标放到红色小盒的左边",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "首先分析图片中的物体从左到右排列顺序为：",
+          "红色小盒（疑似火柴盒）",
+          "折叠伞（黑灰相间）",
+          "纸巾盒（白色包装，印有“clean & soft tissue”等字样）",
+          "黑色鼠标（带线，thinkpad品牌）",
+          "最左边的物体是红色小盒，最右边的物体是鼠标",
+          "任务要求：把最右边的物体（鼠标）放到最左边物体（红色小盒）的左边。",
+          "当前鼠标在最右边，红色小盒在最左边；要将鼠标移到红色小盒左侧，需先拿起鼠标，再将其放置在红色小盒左边。",
+          "注意：桌面空间足够，无遮挡，可操作。",
+          "【最终操作计划】",
+          "拿起鼠标",
+          "把鼠标放到红色小盒的左边"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "eraser": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 5.609,
+      "token_usage": {
+        "prompt_tokens": 1818,
+        "completion_tokens": 182,
+        "total_tokens": 2000,
+        "completion_tokens_details": {
+          "text_tokens": 182
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 216,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-ea7b77bc-b108-92c9-a05c-6c026f8d26fa",
+      "completed_at_utc": "2026-09-04T08:16:23.814604+00:00"
+    },
+    {
+      "task_id": "task_035",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "correct",
+      "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(glasses)",
+        "PLACE_RIGHT(glasses, eraser)",
+        "PICK(tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "glasses",
+          "relation": "right",
+          "target": "eraser"
+        },
+        {
+          "object": "tissue",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-04T08:17:07.320617+00:00",
+      "actual_input_image": "data/images/scene_09.jpg",
+      "raw_model_output": "首先分析图片中的物体从左到右顺序：\n\n1. 纸巾盒（白色包装，带文字）\n2. 眼镜（深色镜框）\n3. 计算器（CASIO，黑白色）\n4. 橡皮（红色包装）\n\n指令要求：\n- 先把“从左数第二个物体”（即眼镜）放到“最右边物体”（即橡皮）的右边；\n- 然后拿起“最左边的物体”（即纸巾盒）。\n\n当前桌面布局是：纸巾盒 — 眼镜 — 计算器 — 橡皮  \n要将眼镜放到橡皮右边，需先拿起眼镜（机械夹爪一次只能拿一个），再放到橡皮右侧空位；之后再拿起纸巾盒。\n\n注意：桌面右侧有足够空间放置眼镜到橡皮右边，操作可行。\n\n【最终操作计划】  \n拿起眼镜  \n把眼镜放到橡皮的右边  \n拿起纸巾盒",
+      "parsed_output": {
+        "actions": [],
+        "errors": [
+          "unsupported_prose"
+        ],
+        "unparsed": [
+          "首先分析图片中的物体从左到右顺序：",
+          "纸巾盒（白色包装，带文字）",
+          "眼镜（深色镜框）",
+          "计算器（casio，黑白色）",
+          "橡皮（红色包装）",
+          "指令要求：",
+          "先把“从左数第二个物体”（即眼镜）放到“最右边物体”（即橡皮）的右边；",
+          "然后拿起“最左边的物体”（即纸巾盒）。",
+          "当前桌面布局是：纸巾盒 — 眼镜 — 计算器 — 橡皮",
+          "要将眼镜放到橡皮右边，需先拿起眼镜（机械夹爪一次只能拿一个），再放到橡皮右侧空位；之后再拿起纸巾盒。",
+          "注意：桌面右侧有足够空间放置眼镜到橡皮右边，操作可行。",
+          "【最终操作计划】",
+          "拿起眼镜",
+          "把眼镜放到橡皮的右边",
+          "拿起纸巾盒"
+        ],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": false,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "unsupported_prose"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 5.203,
+      "token_usage": {
+        "prompt_tokens": 1826,
+        "completion_tokens": 210,
+        "total_tokens": 2036,
+        "completion_tokens_details": {
+          "text_tokens": 210
+        },
+        "prompt_tokens_details": {
+          "image_tokens": 1602,
+          "text_tokens": 224,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-d9ac69ab-577c-95f4-ac90-fcf10a2e2469",
+      "completed_at_utc": "2026-09-04T08:17:12.518327+00:00"
+    }
+  ]
+}

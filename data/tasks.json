@@ -1,0 +1,1452 @@
+[
+  {
+    "id": "task_001",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_002",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "tissue"
+      }
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "tissue"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_003",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "mouse",
+        "relation": "right",
+        "target": "eraser"
+      },
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(mouse)",
+      "PLACE_RIGHT(mouse, eraser)",
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "right",
+        "target": "eraser"
+      },
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_004",
+    "scene_id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "glasses"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_005",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_006",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "ground_truth": [
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_007",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "bottle",
+        "relation": "right",
+        "target": "calculator"
+      },
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(bottle)",
+      "PLACE_RIGHT(bottle, calculator)",
+      "PICK(glasses)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "right",
+        "target": "calculator"
+      },
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_008",
+    "scene_id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "tissue"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_009",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_010",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "ground_truth": [
+      "PICK(bottle)",
+      "PLACE_LEFT(bottle, mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_011",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "eraser",
+        "relation": "right",
+        "target": "bottle"
+      },
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_RIGHT(eraser, bottle)",
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "right",
+        "target": "bottle"
+      },
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_012",
+    "scene_id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "instruction": "如果照片中有雨伞，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "umbrella"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_013",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella"
+    ],
+    "instruction": "如果照片中有笔，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(pen)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_014",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, pen)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_015",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "calculator",
+        "relation": "right",
+        "target": "umbrella"
+      },
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(calculator)",
+      "PLACE_RIGHT(calculator, umbrella)",
+      "PICK(pen)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "right",
+        "target": "umbrella"
+      },
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_016",
+    "scene_id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella"
+    ],
+    "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "mouse"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_017",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "instruction": "如果照片中有饮料瓶，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_018",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_LEFT(glasses, bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_019",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "glasses"
+      },
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(tissue)",
+      "PLACE_RIGHT(tissue, glasses)",
+      "PICK(bottle)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "right",
+        "target": "glasses"
+      },
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_020",
+    "scene_id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "instruction": "如果照片中有笔，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "pen",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "pen"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_021",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "instruction": "如果照片中有雨伞，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_022",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "ground_truth": [
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_023",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "pen",
+        "relation": "right",
+        "target": "calculator"
+      },
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_RIGHT(pen, calculator)",
+      "PICK(umbrella)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "right",
+        "target": "calculator"
+      },
+      {
+        "object": "umbrella",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_024",
+    "scene_id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "mouse"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_025",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "instruction": "如果照片中有计算器，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_026",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "calculator"
+      }
+    ],
+    "ground_truth": [
+      "PICK(pen)",
+      "PLACE_LEFT(pen, calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "calculator"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_027",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "pen"
+      },
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, pen)",
+      "PICK(calculator)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "pen"
+      },
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_028",
+    "scene_id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "instruction": "如果照片中有橡皮，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "eraser"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_029",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "instruction": "如果照片中有橡皮，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_030",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "ground_truth": [
+      "PICK(mouse)",
+      "PLACE_LEFT(mouse, eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_031",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "umbrella",
+        "relation": "right",
+        "target": "mouse"
+      },
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_RIGHT(umbrella, mouse)",
+      "PICK(eraser)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "right",
+        "target": "mouse"
+      },
+      {
+        "object": "eraser",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_032",
+    "scene_id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "glasses",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "glasses"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_033",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_034",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "tissue"
+      }
+    ],
+    "ground_truth": [
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "tissue"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_035",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "eraser"
+      },
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(glasses)",
+      "PLACE_RIGHT(glasses, eraser)",
+      "PICK(tissue)"
+    ],
+    "target_state": [
+      {
+        "object": "glasses",
+        "relation": "right",
+        "target": "eraser"
+      },
+      {
+        "object": "tissue",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_036",
+    "scene_id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "instruction": "如果照片中有饮料瓶，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "bottle",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "bottle"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_037",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+    "category": "single_step",
+    "requested_goals": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_038",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "category": "spatial",
+    "requested_goals": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "ground_truth": [
+      "PICK(umbrella)",
+      "PLACE_LEFT(umbrella, mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_039",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "category": "multi_step",
+    "requested_goals": [
+      {
+        "object": "bottle",
+        "relation": "right",
+        "target": "umbrella"
+      },
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "PICK(bottle)",
+      "PLACE_RIGHT(bottle, umbrella)",
+      "PICK(mouse)"
+    ],
+    "target_state": [
+      {
+        "object": "bottle",
+        "relation": "right",
+        "target": "umbrella"
+      },
+      {
+        "object": "mouse",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "requires_rejection": false,
+    "missing_objects": [],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  },
+  {
+    "id": "task_040",
+    "scene_id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "instruction": "如果照片中有计算器，就拿起它；如果没有，就拒绝任务。",
+    "category": "impossible",
+    "requested_goals": [
+      {
+        "object": "calculator",
+        "relation": "held",
+        "target": null
+      }
+    ],
+    "ground_truth": [
+      "INVALID_TASK"
+    ],
+    "target_state": [],
+    "requires_rejection": true,
+    "missing_objects": [
+      "calculator"
+    ],
+    "visual_reference": true,
+    "benchmark_version": "2.1-visual-grounded"
+  }
+]

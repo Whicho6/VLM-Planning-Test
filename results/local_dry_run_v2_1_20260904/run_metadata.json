@@ -1,0 +1,56 @@
+{
+  "label": "MOCK / PLACEHOLDER（模拟/占位）",
+  "backend": "mock",
+  "model": "MOCK_ORACLE_NOT_A_VLM",
+  "endpoint": null,
+  "created_at_utc": "2026-09-04T08:09:34.468985+00:00",
+  "status": "completed",
+  "seed": 42,
+  "image_condition": "correct",
+  "evaluation_version": "2.1",
+  "temperature": 0,
+  "max_tokens": 512,
+  "max_attempts_per_pair": 3,
+  "prompts": {
+    "free_form": "请根据图片和中文指令规划桌面物体操作。动作中的物体名称必须使用英文标识。\n画面中每类物体只有一个。左右方向以观看图片的人的视角为准。\n机械夹爪一次只能拿一个物体，放置前必须先抓取。当前场景没有可用容器。\n物体可以被拿起，或放到另一物体左边/右边；不具备其他技能。\n必须遵守指令明确要求的顺序。如果缺少任何必需物体，应拒绝整个任务。\n不能仅因指令提到某个物体就假设它存在。\n可以先用自然中文简要分析图片。最后必须另起一段，以【最终操作计划】开头。\n该段只能逐句使用“拿起物体”或“把物体放到另一物体的左边/右边”；物体可用中文名或小写英文标识，不要在该段添加解释。\n无法完成时，最终一行只写“任务无法完成，因为场景中缺少所需物体。”",
+    "structured": "请根据图片和中文指令规划桌面物体操作。动作中的物体名称必须使用英文标识。\n画面中每类物体只有一个。左右方向以观看图片的人的视角为准。\n机械夹爪一次只能拿一个物体，放置前必须先抓取。当前场景没有可用容器。\n物体可以被拿起，或放到另一物体左边/右边；不具备其他技能。\n必须遵守指令明确要求的顺序。如果缺少任何必需物体，应拒绝整个任务。\n不能仅因指令提到某个物体就假设它存在。\n只能逐行输出下列格式之一：\nPICK(object)\nPLACE_IN(object, container)\nPLACE_LEFT(object, target)\nPLACE_RIGHT(object, target)\n无法完成时只输出一行 INVALID_TASK。\n物体标识使用小写英文。禁止添加解释、编号、代码块或额外动作。\n每个 PLACE_LEFT、PLACE_RIGHT 或 PLACE_IN 前都必须先输出对应物体的 PICK，即使中文指令只写“把”。\n多步格式示例：\nPICK(mouse)\nPLACE_RIGHT(mouse, eraser)\nPICK(tissue)"
+  },
+  "dataset_sha256": {
+    "tasks.json": "975a37e57c7ed7eb8f2b2a4f1c5693df08e4dcf5017da63cbfdda0579a343cff",
+    "scenes.json": "5e91ed4097ca57697c48f75b96b52a1eed63366cb68f3425d8453fb56f5b8394"
+  },
+  "image_sha256": {
+    "scene_01": "cb6430bf0fa634e152eaba575fbaaf2182af5351a63270266038753d5a30b556",
+    "scene_02": "0091357a6f55d664f28a93d1e22fa75efc1ee763a176c19e87abce6a3abdda53",
+    "scene_03": "4d63d81d0540dcb1776cbe6515d4e19703df1b724ab7b0c336db54985b358629",
+    "scene_04": "fe19463f924bdea214e0b0cae44e8fdf6a6ef0f87364765ac59d2259ea49defa",
+    "scene_05": "ca1e16c6464a149b2d6cb01cda1031ac9ae05a399a499cc5c7dac5ee0c4c92cb",
+    "scene_06": "7a321460eee3ff2b9265b50e0fa0ef4688b279b6c968f64e6e5904ba76dd56ea",
+    "scene_07": "b4a938ed36ed505c0a632de3f0558592559571b84a6fb5866b14157adcefbcb5",
+    "scene_08": "5bafbd362c13eb806110ef8b3806f7deccce4be7dfb157a94851c0f2f92ace2f",
+    "scene_09": "1fa45f76f08c83d9ee5caeef23c146e225d871104b7043fff646fd2f1d63f903",
+    "scene_10": "47c8d121114bb433b496f87f3b4b3c641b0b74635402097d7890de66e23b0c48"
+  },
+  "python": "3.12.14",
+  "code_sha256": {
+    "src\\__init__.py": "11b43e981b4368ab2af20297ca5cca6513cb549f5d9ac49e25e7acb0c355b83e",
+    "src\\benchmark.py": "510558802a332527f0334f34df92c79644506c0165da4fd81ede7310723275e1",
+    "src\\evaluator.py": "61afc92bfebe49b2c1aefb71eddcdd853d9306e9aa25acd35f8d1cf46a3e1452",
+    "src\\parser.py": "5a82138ef9d9e5dbb3d484ec767590ebc97455304836f817dfe21b0d84557442",
+    "src\\prompts.py": "0c732867d161dbc518734ff1c4f36c0431b6939d753bfe670653457a8f5d9c61",
+    "src\\utils.py": "325ba9bb8c5ad5221950c017d9559f7a495ec79c1d593a8720025d3d900f4a6c",
+    "src\\vlm.py": "ea32bb3143485e71f18a8cdcac78471db2ae35d0cfa4e9f19e8736ea53fcd1db",
+    "run_evaluation.py": "583c986b1c37f2777305b3988600cbf75a5878f5f81e42fc954dd13d2ca80898",
+    "requirements-lock.txt": "b523c5772edaf2a76428bc89e91da8e19411dffc4ca32c6069e3cf45438b3be2"
+  },
+  "completed_pairs": 80,
+  "successful_pairs": 80,
+  "failed_pairs": 0,
+  "actual_api_calls": 0,
+  "model_invocations": 80,
+  "successful_api_calls": 0,
+  "failed_api_calls": 0,
+  "total_elapsed_seconds": 0.735,
+  "token_usage": {},
+  "updated_at_utc": "2026-09-04T08:09:35.200222+00:00"
+}

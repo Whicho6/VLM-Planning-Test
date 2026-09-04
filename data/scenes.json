@@ -1,0 +1,372 @@
+[
+  {
+    "id": "scene_01",
+    "image": "data/images/scene_01.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "cb6430bf0fa634e152eaba575fbaaf2182af5351a63270266038753d5a30b556",
+    "objects": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "mouse"
+      },
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "pen"
+      },
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "tissue",
+      "mouse",
+      "pen",
+      "eraser"
+    ]
+  },
+  {
+    "id": "scene_02",
+    "image": "data/images/scene_02.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "0091357a6f55d664f28a93d1e22fa75efc1ee763a176c19e87abce6a3abdda53",
+    "objects": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "bottle"
+      },
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "umbrella"
+      },
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "calculator"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "glasses",
+      "bottle",
+      "umbrella",
+      "calculator"
+    ]
+  },
+  {
+    "id": "scene_03",
+    "image": "data/images/scene_03.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "4d63d81d0540dcb1776cbe6515d4e19703df1b724ab7b0c336db54985b358629",
+    "objects": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "eraser"
+      },
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "glasses"
+      },
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "bottle"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "mouse",
+      "eraser",
+      "glasses",
+      "bottle"
+    ]
+  },
+  {
+    "id": "scene_04",
+    "image": "data/images/scene_04.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "fe19463f924bdea214e0b0cae44e8fdf6a6ef0f87364765ac59d2259ea49defa",
+    "objects": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "calculator"
+      },
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "tissue"
+      },
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "pen",
+      "calculator",
+      "tissue",
+      "umbrella"
+    ]
+  },
+  {
+    "id": "scene_05",
+    "image": "data/images/scene_05.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "ca1e16c6464a149b2d6cb01cda1031ac9ae05a399a499cc5c7dac5ee0c4c92cb",
+    "objects": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "tissue"
+      },
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "mouse"
+      },
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "glasses"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "bottle",
+      "tissue",
+      "mouse",
+      "glasses"
+    ]
+  },
+  {
+    "id": "scene_06",
+    "image": "data/images/scene_06.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "7a321460eee3ff2b9265b50e0fa0ef4688b279b6c968f64e6e5904ba76dd56ea",
+    "objects": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "pen"
+      },
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "eraser"
+      },
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "calculator"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "umbrella",
+      "pen",
+      "eraser",
+      "calculator"
+    ]
+  },
+  {
+    "id": "scene_07",
+    "image": "data/images/scene_07.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "b4a938ed36ed505c0a632de3f0558592559571b84a6fb5866b14157adcefbcb5",
+    "objects": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "glasses"
+      },
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "bottle"
+      },
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "pen"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "calculator",
+      "glasses",
+      "bottle",
+      "pen"
+    ]
+  },
+  {
+    "id": "scene_08",
+    "image": "data/images/scene_08.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "5bafbd362c13eb806110ef8b3806f7deccce4be7dfb157a94851c0f2f92ace2f",
+    "objects": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "eraser",
+        "relation": "left",
+        "target": "umbrella"
+      },
+      {
+        "object": "umbrella",
+        "relation": "left",
+        "target": "tissue"
+      },
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "mouse"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "eraser",
+      "umbrella",
+      "tissue",
+      "mouse"
+    ]
+  },
+  {
+    "id": "scene_09",
+    "image": "data/images/scene_09.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "1fa45f76f08c83d9ee5caeef23c146e225d871104b7043fff646fd2f1d63f903",
+    "objects": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "tissue",
+        "relation": "left",
+        "target": "glasses"
+      },
+      {
+        "object": "glasses",
+        "relation": "left",
+        "target": "calculator"
+      },
+      {
+        "object": "calculator",
+        "relation": "left",
+        "target": "eraser"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "tissue",
+      "glasses",
+      "calculator",
+      "eraser"
+    ]
+  },
+  {
+    "id": "scene_10",
+    "image": "data/images/scene_10.jpg",
+    "annotation_status": "verified_real",
+    "verified_image_sha256": "47c8d121114bb433b496f87f3b4b3c641b0b74635402097d7890de66e23b0c48",
+    "objects": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ],
+    "containers": [],
+    "relations": [
+      {
+        "object": "mouse",
+        "relation": "left",
+        "target": "bottle"
+      },
+      {
+        "object": "bottle",
+        "relation": "left",
+        "target": "pen"
+      },
+      {
+        "object": "pen",
+        "relation": "left",
+        "target": "umbrella"
+      }
+    ],
+    "initial_state": "All objects are separate on the tabletop; nothing is held.",
+    "left_to_right": [
+      "mouse",
+      "bottle",
+      "pen",
+      "umbrella"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+﻿scope,prompt_mode,category,total_tasks,scored_tasks,api_errors,planning_accuracy,action_validity,format_compliance,hallucination_rate,hallucination_task_rate,parse_coverage,object_reference_count
+overall,all,all,80,80,0,0.35,0.3625,0.5,0.05714285714285714,0.05,0.5,70
+category,all,single_step,20,20,0,0.5,0.5,0.5,0.0,0.0,0.5,10
+category,all,spatial,20,20,0,0.4,0.45,0.5,0.03333333333333333,0.05,0.5,30
+category,all,multi_step,20,20,0,0.0,0.0,0.5,0.1,0.15,0.5,30
+category,all,impossible,20,20,0,0.5,0.5,0.5,,0.0,0.5,0
+prompt_mode,free_form,all,40,40,0,0.0,0.0,0.0,,0.0,0.0,0
+prompt_mode_category,free_form,single_step,10,10,0,0.0,0.0,0.0,,0.0,0.0,0
+prompt_mode_category,free_form,spatial,10,10,0,0.0,0.0,0.0,,0.0,0.0,0
+prompt_mode_category,free_form,multi_step,10,10,0,0.0,0.0,0.0,,0.0,0.0,0
+prompt_mode_category,free_form,impossible,10,10,0,0.0,0.0,0.0,,0.0,0.0,0
+prompt_mode,structured,all,40,40,0,0.7,0.725,1.0,0.05714285714285714,0.1,1.0,70
+prompt_mode_category,structured,single_step,10,10,0,1.0,1.0,1.0,0.0,0.0,1.0,10
+prompt_mode_category,structured,spatial,10,10,0,0.8,0.9,1.0,0.03333333333333333,0.1,1.0,30
+prompt_mode_category,structured,multi_step,10,10,0,0.0,0.0,1.0,0.1,0.3,1.0,30
+prompt_mode_category,structured,impossible,10,10,0,1.0,1.0,1.0,,0.0,1.0,0
