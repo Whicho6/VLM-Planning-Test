@@ -1,1 +1,1 @@
-"""MiniEmbodiedBench: symbolic tabletop planning evaluation."""
+"""VLM-Planning-Test: symbolic tabletop planning evaluation."""
