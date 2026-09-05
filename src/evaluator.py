@@ -39,6 +39,39 @@ def simulate(actions: list, scene: dict) -> dict:
             "hallucinated_objects": hallucinated, "object_references": refs}
 
 
+def decision_failure_types(task: dict, actions: list[dict]) -> list[str]:
+    """用透明规则解释存在性或条件空间决策错在何处。"""
+    category = task.get("category")
+    if category in {"single_step", "impossible"}:
+        decision = task.get("existence_decision") or {}
+        rejected = actions == [{"action": "INVALID_TASK", "args": []}]
+        expected_rejection = decision.get("expected_action") == "INVALID_TASK"
+        return ["wrong_existence_decision"] if rejected != expected_rejection else []
+    if category not in {"spatial", "multi_step"} or not actions:
+        return []
+    field = "spatial_decision" if category == "spatial" else "multi_step_decision"
+    decision = task.get(field) or {}
+    failures = []
+    picks = [a for a in actions if a.get("action") == "PICK" and a.get("args")]
+    places = [a for a in actions if a.get("action") in {"PLACE_LEFT", "PLACE_RIGHT"} and len(a.get("args", [])) == 2]
+    if not picks or picks[0]["args"][0] != decision.get("moved_object"):
+        failures.append("wrong_moved_object")
+    if not places:
+        failures.append("missing_placement_action")
+    else:
+        place = places[0]
+        expected_action = "PLACE_" + str(decision.get("placement", "")).upper()
+        if place["action"] != expected_action:
+            failures.extend(["wrong_direction", "wrong_condition_branch"])
+        if place["args"][0] != decision.get("moved_object"):
+            failures.append("wrong_moved_object")
+        if place["args"][1] != decision.get("target_object"):
+            failures.append("wrong_target_object")
+    if category == "multi_step" and (len(picks) < 2 or picks[-1]["args"][0] != decision.get("followup_object")):
+        failures.append("wrong_followup_object")
+    return list(dict.fromkeys(failures))
+
+
 def evaluate(task: dict, scene: dict, output: str, method: str) -> dict:
     parsed = (parse_structured if method == "structured" else parse_free_form)(output)
     sim = simulate(parsed["actions"], scene)
@@ -55,6 +88,8 @@ def evaluate(task: dict, scene: dict, output: str, method: str) -> dict:
     gripper_ok = expects_held or sim["held"] is None
     success = valid and (rejected if task["category"] == "impossible" else not rejected and final_ok and ordered and gripper_ok)
     failures = list(dict.fromkeys(parsed["errors"] + sim["invalid"]))
+    if not success:
+        failures.extend(x for x in decision_failure_types(task, parsed["actions"]) if x not in failures)
     if not success and not failures:
         failures.append("failure_to_reject_impossible" if task["category"] == "impossible" else "wrong_action_order" if final_ok and not ordered else "incorrect_target_state")
     return {"parsed_output": parsed, "task_planning_success": success, "action_validity": valid,

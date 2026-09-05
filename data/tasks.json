@@ -31,7 +31,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_01",
+      "queried_object": "tissue",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_002",
@@ -43,7 +49,7 @@
       "pen",
       "eraser"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察橡皮和纸巾当前的位置：如果橡皮在纸巾左边，就把橡皮放到纸巾右边；否则，把橡皮放到纸巾左边。",
     "category": "spatial",
     "requested_goals": [
       {
@@ -66,7 +72,17 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "eraser",
+      "relation": "left",
+      "reference": "tissue",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "eraser",
+      "target_object": "tissue",
+      "placement": "left"
+    }
   },
   {
     "id": "task_003",
@@ -78,13 +94,13 @@
       "pen",
       "eraser"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察笔和纸巾当前的位置：如果笔在纸巾左边，先把笔放到纸巾右边，再拿起纸巾；否则，先把笔放到纸巾左边，再拿起纸巾。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "mouse",
-        "relation": "right",
-        "target": "eraser"
+        "object": "pen",
+        "relation": "left",
+        "target": "tissue"
       },
       {
         "object": "tissue",
@@ -93,15 +109,15 @@
       }
     ],
     "ground_truth": [
-      "PICK(mouse)",
-      "PLACE_RIGHT(mouse, eraser)",
+      "PICK(pen)",
+      "PLACE_LEFT(pen, tissue)",
       "PICK(tissue)"
     ],
     "target_state": [
       {
-        "object": "mouse",
-        "relation": "right",
-        "target": "eraser"
+        "object": "pen",
+        "relation": "left",
+        "target": "tissue"
       },
       {
         "object": "tissue",
@@ -112,7 +128,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "pen",
+      "relation": "left",
+      "reference": "tissue",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "pen",
+      "target_object": "tissue",
+      "placement": "left",
+      "followup_object": "tissue"
+    }
   },
   {
     "id": "task_004",
@@ -142,7 +169,13 @@
       "glasses"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_02",
+      "queried_object": "glasses",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_005",
@@ -176,7 +209,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_02",
+      "queried_object": "glasses",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_006",
@@ -188,7 +227,7 @@
       "umbrella",
       "calculator"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察计算器和眼镜当前的位置：如果计算器在眼镜左边，就把计算器放到眼镜右边；否则，把计算器放到眼镜左边。",
     "category": "spatial",
     "requested_goals": [
       {
@@ -211,7 +250,17 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "calculator",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "calculator",
+      "target_object": "glasses",
+      "placement": "left"
+    }
   },
   {
     "id": "task_007",
@@ -223,13 +272,13 @@
       "umbrella",
       "calculator"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，先把饮料瓶放到眼镜右边，再拿起眼镜；否则，先把饮料瓶放到眼镜左边，再拿起眼镜。",
     "category": "multi_step",
     "requested_goals": [
       {
         "object": "bottle",
-        "relation": "right",
-        "target": "calculator"
+        "relation": "left",
+        "target": "glasses"
       },
       {
         "object": "glasses",
@@ -239,14 +288,14 @@
     ],
     "ground_truth": [
       "PICK(bottle)",
-      "PLACE_RIGHT(bottle, calculator)",
+      "PLACE_LEFT(bottle, glasses)",
       "PICK(glasses)"
     ],
     "target_state": [
       {
         "object": "bottle",
-        "relation": "right",
-        "target": "calculator"
+        "relation": "left",
+        "target": "glasses"
       },
       {
         "object": "glasses",
@@ -257,7 +306,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "bottle",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "bottle",
+      "target_object": "glasses",
+      "placement": "left",
+      "followup_object": "glasses"
+    }
   },
   {
     "id": "task_008",
@@ -287,7 +347,13 @@
       "tissue"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_01",
+      "queried_object": "tissue",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_009",
@@ -321,7 +387,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_03",
+      "queried_object": "mouse",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_010",
@@ -333,30 +405,40 @@
       "glasses",
       "bottle"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，就把饮料瓶放到眼镜右边；否则，把饮料瓶放到眼镜左边。",
     "category": "spatial",
     "requested_goals": [
       {
         "object": "bottle",
         "relation": "left",
-        "target": "mouse"
+        "target": "glasses"
       }
     ],
     "ground_truth": [
       "PICK(bottle)",
-      "PLACE_LEFT(bottle, mouse)"
+      "PLACE_LEFT(bottle, glasses)"
     ],
     "target_state": [
       {
         "object": "bottle",
         "relation": "left",
-        "target": "mouse"
+        "target": "glasses"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "bottle",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "bottle",
+      "target_object": "glasses",
+      "placement": "left"
+    }
   },
   {
     "id": "task_011",
@@ -368,33 +450,33 @@
       "glasses",
       "bottle"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察橡皮和眼镜当前的位置：如果橡皮在眼镜左边，先把橡皮放到眼镜右边，再拿起眼镜；否则，先把橡皮放到眼镜左边，再拿起眼镜。",
     "category": "multi_step",
     "requested_goals": [
       {
         "object": "eraser",
         "relation": "right",
-        "target": "bottle"
+        "target": "glasses"
       },
       {
-        "object": "mouse",
+        "object": "glasses",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
       "PICK(eraser)",
-      "PLACE_RIGHT(eraser, bottle)",
-      "PICK(mouse)"
+      "PLACE_RIGHT(eraser, glasses)",
+      "PICK(glasses)"
     ],
     "target_state": [
       {
         "object": "eraser",
         "relation": "right",
-        "target": "bottle"
+        "target": "glasses"
       },
       {
-        "object": "mouse",
+        "object": "glasses",
         "relation": "held",
         "target": null
       }
@@ -402,7 +484,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "eraser",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "eraser",
+      "target_object": "glasses",
+      "placement": "right",
+      "followup_object": "glasses"
+    }
   },
   {
     "id": "task_012",
@@ -414,11 +507,11 @@
       "glasses",
       "bottle"
     ],
-    "instruction": "如果照片中有雨伞，就拿起它；如果没有，就拒绝任务。",
+    "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
     "category": "impossible",
     "requested_goals": [
       {
-        "object": "umbrella",
+        "object": "tissue",
         "relation": "held",
         "target": null
       }
@@ -429,10 +522,16 @@
     "target_state": [],
     "requires_rejection": true,
     "missing_objects": [
-      "umbrella"
+      "tissue"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_09",
+      "queried_object": "tissue",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_013",
@@ -466,7 +565,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_04",
+      "queried_object": "pen",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_014",
@@ -478,30 +583,40 @@
       "tissue",
       "umbrella"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察计算器和纸巾当前的位置：如果计算器在纸巾左边，就把计算器放到纸巾右边；否则，把计算器放到纸巾左边。",
     "category": "spatial",
     "requested_goals": [
       {
-        "object": "umbrella",
-        "relation": "left",
-        "target": "pen"
+        "object": "calculator",
+        "relation": "right",
+        "target": "tissue"
       }
     ],
     "ground_truth": [
-      "PICK(umbrella)",
-      "PLACE_LEFT(umbrella, pen)"
+      "PICK(calculator)",
+      "PLACE_RIGHT(calculator, tissue)"
     ],
     "target_state": [
       {
-        "object": "umbrella",
-        "relation": "left",
-        "target": "pen"
+        "object": "calculator",
+        "relation": "right",
+        "target": "tissue"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "calculator",
+      "relation": "left",
+      "reference": "tissue",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "calculator",
+      "target_object": "tissue",
+      "placement": "right"
+    }
   },
   {
     "id": "task_015",
@@ -513,33 +628,33 @@
       "tissue",
       "umbrella"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察笔和纸巾当前的位置：如果笔在纸巾左边，先把笔放到纸巾右边，再拿起纸巾；否则，先把笔放到纸巾左边，再拿起纸巾。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "calculator",
+        "object": "pen",
         "relation": "right",
-        "target": "umbrella"
+        "target": "tissue"
       },
       {
-        "object": "pen",
+        "object": "tissue",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(calculator)",
-      "PLACE_RIGHT(calculator, umbrella)",
-      "PICK(pen)"
+      "PICK(pen)",
+      "PLACE_RIGHT(pen, tissue)",
+      "PICK(tissue)"
     ],
     "target_state": [
       {
-        "object": "calculator",
+        "object": "pen",
         "relation": "right",
-        "target": "umbrella"
+        "target": "tissue"
       },
       {
-        "object": "pen",
+        "object": "tissue",
         "relation": "held",
         "target": null
       }
@@ -547,7 +662,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "pen",
+      "relation": "left",
+      "reference": "tissue",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "pen",
+      "target_object": "tissue",
+      "placement": "right",
+      "followup_object": "tissue"
+    }
   },
   {
     "id": "task_016",
@@ -577,7 +703,13 @@
       "mouse"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_03",
+      "queried_object": "mouse",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_017",
@@ -611,7 +743,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_05",
+      "queried_object": "bottle",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_018",
@@ -623,30 +761,40 @@
       "mouse",
       "glasses"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，就把饮料瓶放到眼镜右边；否则，把饮料瓶放到眼镜左边。",
     "category": "spatial",
     "requested_goals": [
       {
-        "object": "glasses",
-        "relation": "left",
-        "target": "bottle"
+        "object": "bottle",
+        "relation": "right",
+        "target": "glasses"
       }
     ],
     "ground_truth": [
-      "PICK(glasses)",
-      "PLACE_LEFT(glasses, bottle)"
+      "PICK(bottle)",
+      "PLACE_RIGHT(bottle, glasses)"
     ],
     "target_state": [
       {
-        "object": "glasses",
-        "relation": "left",
-        "target": "bottle"
+        "object": "bottle",
+        "relation": "right",
+        "target": "glasses"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "bottle",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "bottle",
+      "target_object": "glasses",
+      "placement": "right"
+    }
   },
   {
     "id": "task_019",
@@ -658,33 +806,33 @@
       "mouse",
       "glasses"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，先把饮料瓶放到眼镜右边，再拿起眼镜；否则，先把饮料瓶放到眼镜左边，再拿起眼镜。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "tissue",
+        "object": "bottle",
         "relation": "right",
         "target": "glasses"
       },
       {
-        "object": "bottle",
+        "object": "glasses",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(tissue)",
-      "PLACE_RIGHT(tissue, glasses)",
-      "PICK(bottle)"
+      "PICK(bottle)",
+      "PLACE_RIGHT(bottle, glasses)",
+      "PICK(glasses)"
     ],
     "target_state": [
       {
-        "object": "tissue",
+        "object": "bottle",
         "relation": "right",
         "target": "glasses"
       },
       {
-        "object": "bottle",
+        "object": "glasses",
         "relation": "held",
         "target": null
       }
@@ -692,7 +840,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "bottle",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "bottle",
+      "target_object": "glasses",
+      "placement": "right",
+      "followup_object": "glasses"
+    }
   },
   {
     "id": "task_020",
@@ -722,7 +881,13 @@
       "pen"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_04",
+      "queried_object": "pen",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_021",
@@ -756,7 +921,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_06",
+      "queried_object": "umbrella",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_022",
@@ -768,30 +939,40 @@
       "eraser",
       "calculator"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察雨伞和笔当前的位置：如果雨伞在笔左边，就把雨伞放到笔右边；否则，把雨伞放到笔左边。",
     "category": "spatial",
     "requested_goals": [
       {
-        "object": "calculator",
-        "relation": "left",
-        "target": "umbrella"
+        "object": "umbrella",
+        "relation": "right",
+        "target": "pen"
       }
     ],
     "ground_truth": [
-      "PICK(calculator)",
-      "PLACE_LEFT(calculator, umbrella)"
+      "PICK(umbrella)",
+      "PLACE_RIGHT(umbrella, pen)"
     ],
     "target_state": [
       {
-        "object": "calculator",
-        "relation": "left",
-        "target": "umbrella"
+        "object": "umbrella",
+        "relation": "right",
+        "target": "pen"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "umbrella",
+      "relation": "left",
+      "reference": "pen",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "umbrella",
+      "target_object": "pen",
+      "placement": "right"
+    }
   },
   {
     "id": "task_023",
@@ -803,33 +984,33 @@
       "eraser",
       "calculator"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察计算器和笔当前的位置：如果计算器在笔左边，先把计算器放到笔右边，再拿起笔；否则，先把计算器放到笔左边，再拿起笔。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "pen",
-        "relation": "right",
-        "target": "calculator"
+        "object": "calculator",
+        "relation": "left",
+        "target": "pen"
       },
       {
-        "object": "umbrella",
+        "object": "pen",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(pen)",
-      "PLACE_RIGHT(pen, calculator)",
-      "PICK(umbrella)"
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, pen)",
+      "PICK(pen)"
     ],
     "target_state": [
       {
-        "object": "pen",
-        "relation": "right",
-        "target": "calculator"
+        "object": "calculator",
+        "relation": "left",
+        "target": "pen"
       },
       {
-        "object": "umbrella",
+        "object": "pen",
         "relation": "held",
         "target": null
       }
@@ -837,7 +1018,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "calculator",
+      "relation": "left",
+      "reference": "pen",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "calculator",
+      "target_object": "pen",
+      "placement": "left",
+      "followup_object": "pen"
+    }
   },
   {
     "id": "task_024",
@@ -849,11 +1041,11 @@
       "eraser",
       "calculator"
     ],
-    "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+    "instruction": "如果照片中有饮料瓶，就拿起它；如果没有，就拒绝任务。",
     "category": "impossible",
     "requested_goals": [
       {
-        "object": "mouse",
+        "object": "bottle",
         "relation": "held",
         "target": null
       }
@@ -864,10 +1056,16 @@
     "target_state": [],
     "requires_rejection": true,
     "missing_objects": [
-      "mouse"
+      "bottle"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_05",
+      "queried_object": "bottle",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_025",
@@ -901,7 +1099,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_07",
+      "queried_object": "calculator",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_026",
@@ -913,30 +1117,40 @@
       "bottle",
       "pen"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察计算器和眼镜当前的位置：如果计算器在眼镜左边，就把计算器放到眼镜右边；否则，把计算器放到眼镜左边。",
     "category": "spatial",
     "requested_goals": [
       {
-        "object": "pen",
-        "relation": "left",
-        "target": "calculator"
+        "object": "calculator",
+        "relation": "right",
+        "target": "glasses"
       }
     ],
     "ground_truth": [
-      "PICK(pen)",
-      "PLACE_LEFT(pen, calculator)"
+      "PICK(calculator)",
+      "PLACE_RIGHT(calculator, glasses)"
     ],
     "target_state": [
       {
-        "object": "pen",
-        "relation": "left",
-        "target": "calculator"
+        "object": "calculator",
+        "relation": "right",
+        "target": "glasses"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "calculator",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "calculator",
+      "target_object": "glasses",
+      "placement": "right"
+    }
   },
   {
     "id": "task_027",
@@ -948,33 +1162,33 @@
       "bottle",
       "pen"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察计算器和笔当前的位置：如果计算器在笔左边，先把计算器放到笔右边，再拿起笔；否则，先把计算器放到笔左边，再拿起笔。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "glasses",
+        "object": "calculator",
         "relation": "right",
         "target": "pen"
       },
       {
-        "object": "calculator",
+        "object": "pen",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(glasses)",
-      "PLACE_RIGHT(glasses, pen)",
-      "PICK(calculator)"
+      "PICK(calculator)",
+      "PLACE_RIGHT(calculator, pen)",
+      "PICK(pen)"
     ],
     "target_state": [
       {
-        "object": "glasses",
+        "object": "calculator",
         "relation": "right",
         "target": "pen"
       },
       {
-        "object": "calculator",
+        "object": "pen",
         "relation": "held",
         "target": null
       }
@@ -982,7 +1196,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "calculator",
+      "relation": "left",
+      "reference": "pen",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "calculator",
+      "target_object": "pen",
+      "placement": "right",
+      "followup_object": "pen"
+    }
   },
   {
     "id": "task_028",
@@ -994,11 +1219,11 @@
       "bottle",
       "pen"
     ],
-    "instruction": "如果照片中有橡皮，就拿起它；如果没有，就拒绝任务。",
+    "instruction": "如果照片中有雨伞，就拿起它；如果没有，就拒绝任务。",
     "category": "impossible",
     "requested_goals": [
       {
-        "object": "eraser",
+        "object": "umbrella",
         "relation": "held",
         "target": null
       }
@@ -1009,10 +1234,16 @@
     "target_state": [],
     "requires_rejection": true,
     "missing_objects": [
-      "eraser"
+      "umbrella"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_06",
+      "queried_object": "umbrella",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_029",
@@ -1046,7 +1277,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_08",
+      "queried_object": "eraser",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_030",
@@ -1058,30 +1295,40 @@
       "tissue",
       "mouse"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察橡皮和纸巾当前的位置：如果橡皮在纸巾左边，就把橡皮放到纸巾右边；否则，把橡皮放到纸巾左边。",
     "category": "spatial",
     "requested_goals": [
       {
-        "object": "mouse",
-        "relation": "left",
-        "target": "eraser"
+        "object": "eraser",
+        "relation": "right",
+        "target": "tissue"
       }
     ],
     "ground_truth": [
-      "PICK(mouse)",
-      "PLACE_LEFT(mouse, eraser)"
+      "PICK(eraser)",
+      "PLACE_RIGHT(eraser, tissue)"
     ],
     "target_state": [
       {
-        "object": "mouse",
-        "relation": "left",
-        "target": "eraser"
+        "object": "eraser",
+        "relation": "right",
+        "target": "tissue"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "eraser",
+      "relation": "left",
+      "reference": "tissue",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "eraser",
+      "target_object": "tissue",
+      "placement": "right"
+    }
   },
   {
     "id": "task_031",
@@ -1093,33 +1340,33 @@
       "tissue",
       "mouse"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察鼠标和雨伞当前的位置：如果鼠标在雨伞左边，先把鼠标放到雨伞右边，再拿起雨伞；否则，先把鼠标放到雨伞左边，再拿起雨伞。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "umbrella",
-        "relation": "right",
-        "target": "mouse"
+        "object": "mouse",
+        "relation": "left",
+        "target": "umbrella"
       },
       {
-        "object": "eraser",
+        "object": "umbrella",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(umbrella)",
-      "PLACE_RIGHT(umbrella, mouse)",
-      "PICK(eraser)"
+      "PICK(mouse)",
+      "PLACE_LEFT(mouse, umbrella)",
+      "PICK(umbrella)"
     ],
     "target_state": [
       {
-        "object": "umbrella",
-        "relation": "right",
-        "target": "mouse"
+        "object": "mouse",
+        "relation": "left",
+        "target": "umbrella"
       },
       {
-        "object": "eraser",
+        "object": "umbrella",
         "relation": "held",
         "target": null
       }
@@ -1127,7 +1374,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "mouse",
+      "relation": "left",
+      "reference": "umbrella",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "mouse",
+      "target_object": "umbrella",
+      "placement": "left",
+      "followup_object": "umbrella"
+    }
   },
   {
     "id": "task_032",
@@ -1139,11 +1397,11 @@
       "tissue",
       "mouse"
     ],
-    "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+    "instruction": "如果照片中有计算器，就拿起它；如果没有，就拒绝任务。",
     "category": "impossible",
     "requested_goals": [
       {
-        "object": "glasses",
+        "object": "calculator",
         "relation": "held",
         "target": null
       }
@@ -1154,10 +1412,16 @@
     "target_state": [],
     "requires_rejection": true,
     "missing_objects": [
-      "glasses"
+      "calculator"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_07",
+      "queried_object": "calculator",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_033",
@@ -1191,7 +1455,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_09",
+      "queried_object": "tissue",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_034",
@@ -1203,22 +1473,22 @@
       "calculator",
       "eraser"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察计算器和纸巾当前的位置：如果计算器在纸巾左边，就把计算器放到纸巾右边；否则，把计算器放到纸巾左边。",
     "category": "spatial",
     "requested_goals": [
       {
-        "object": "eraser",
+        "object": "calculator",
         "relation": "left",
         "target": "tissue"
       }
     ],
     "ground_truth": [
-      "PICK(eraser)",
-      "PLACE_LEFT(eraser, tissue)"
+      "PICK(calculator)",
+      "PLACE_LEFT(calculator, tissue)"
     ],
     "target_state": [
       {
-        "object": "eraser",
+        "object": "calculator",
         "relation": "left",
         "target": "tissue"
       }
@@ -1226,7 +1496,17 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "calculator",
+      "relation": "left",
+      "reference": "tissue",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "calculator",
+      "target_object": "tissue",
+      "placement": "left"
+    }
   },
   {
     "id": "task_035",
@@ -1238,33 +1518,33 @@
       "calculator",
       "eraser"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察橡皮和眼镜当前的位置：如果橡皮在眼镜左边，先把橡皮放到眼镜右边，再拿起眼镜；否则，先把橡皮放到眼镜左边，再拿起眼镜。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "glasses",
-        "relation": "right",
-        "target": "eraser"
+        "object": "eraser",
+        "relation": "left",
+        "target": "glasses"
       },
       {
-        "object": "tissue",
+        "object": "glasses",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(glasses)",
-      "PLACE_RIGHT(glasses, eraser)",
-      "PICK(tissue)"
+      "PICK(eraser)",
+      "PLACE_LEFT(eraser, glasses)",
+      "PICK(glasses)"
     ],
     "target_state": [
       {
-        "object": "glasses",
-        "relation": "right",
-        "target": "eraser"
+        "object": "eraser",
+        "relation": "left",
+        "target": "glasses"
       },
       {
-        "object": "tissue",
+        "object": "glasses",
         "relation": "held",
         "target": null
       }
@@ -1272,7 +1552,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "eraser",
+      "relation": "left",
+      "reference": "glasses",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "eraser",
+      "target_object": "glasses",
+      "placement": "left",
+      "followup_object": "glasses"
+    }
   },
   {
     "id": "task_036",
@@ -1284,11 +1575,11 @@
       "calculator",
       "eraser"
     ],
-    "instruction": "如果照片中有饮料瓶，就拿起它；如果没有，就拒绝任务。",
+    "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
     "category": "impossible",
     "requested_goals": [
       {
-        "object": "bottle",
+        "object": "mouse",
         "relation": "held",
         "target": null
       }
@@ -1299,10 +1590,16 @@
     "target_state": [],
     "requires_rejection": true,
     "missing_objects": [
-      "bottle"
+      "mouse"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_10",
+      "queried_object": "mouse",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   },
   {
     "id": "task_037",
@@ -1336,7 +1633,13 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_10",
+      "queried_object": "mouse",
+      "observed": true,
+      "expected_action": "PICK"
+    }
   },
   {
     "id": "task_038",
@@ -1348,30 +1651,40 @@
       "pen",
       "umbrella"
     ],
-    "instruction": "把最右边的物体放到最左边物体的左边。",
+    "instruction": "观察雨伞和笔当前的位置：如果雨伞在笔左边，就把雨伞放到笔右边；否则，把雨伞放到笔左边。",
     "category": "spatial",
     "requested_goals": [
       {
         "object": "umbrella",
         "relation": "left",
-        "target": "mouse"
+        "target": "pen"
       }
     ],
     "ground_truth": [
       "PICK(umbrella)",
-      "PLACE_LEFT(umbrella, mouse)"
+      "PLACE_LEFT(umbrella, pen)"
     ],
     "target_state": [
       {
         "object": "umbrella",
         "relation": "left",
-        "target": "mouse"
+        "target": "pen"
       }
     ],
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "spatial_decision": {
+      "subject": "umbrella",
+      "relation": "left",
+      "reference": "pen",
+      "observed": false,
+      "selected_branch": "else",
+      "moved_object": "umbrella",
+      "target_object": "pen",
+      "placement": "left"
+    }
   },
   {
     "id": "task_039",
@@ -1383,33 +1696,33 @@
       "pen",
       "umbrella"
     ],
-    "instruction": "先把从左数第二个物体放到最右边物体的右边，然后拿起最左边的物体。",
+    "instruction": "观察鼠标和雨伞当前的位置：如果鼠标在雨伞左边，先把鼠标放到雨伞右边，再拿起雨伞；否则，先把鼠标放到雨伞左边，再拿起雨伞。",
     "category": "multi_step",
     "requested_goals": [
       {
-        "object": "bottle",
+        "object": "mouse",
         "relation": "right",
         "target": "umbrella"
       },
       {
-        "object": "mouse",
+        "object": "umbrella",
         "relation": "held",
         "target": null
       }
     ],
     "ground_truth": [
-      "PICK(bottle)",
-      "PLACE_RIGHT(bottle, umbrella)",
-      "PICK(mouse)"
+      "PICK(mouse)",
+      "PLACE_RIGHT(mouse, umbrella)",
+      "PICK(umbrella)"
     ],
     "target_state": [
       {
-        "object": "bottle",
+        "object": "mouse",
         "relation": "right",
         "target": "umbrella"
       },
       {
-        "object": "mouse",
+        "object": "umbrella",
         "relation": "held",
         "target": null
       }
@@ -1417,7 +1730,18 @@
     "requires_rejection": false,
     "missing_objects": [],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "multi_step_decision": {
+      "subject": "mouse",
+      "relation": "left",
+      "reference": "umbrella",
+      "observed": true,
+      "selected_branch": "if",
+      "moved_object": "mouse",
+      "target_object": "umbrella",
+      "placement": "right",
+      "followup_object": "umbrella"
+    }
   },
   {
     "id": "task_040",
@@ -1429,11 +1753,11 @@
       "pen",
       "umbrella"
     ],
-    "instruction": "如果照片中有计算器，就拿起它；如果没有，就拒绝任务。",
+    "instruction": "如果照片中有橡皮，就拿起它；如果没有，就拒绝任务。",
     "category": "impossible",
     "requested_goals": [
       {
-        "object": "calculator",
+        "object": "eraser",
         "relation": "held",
         "target": null
       }
@@ -1444,9 +1768,15 @@
     "target_state": [],
     "requires_rejection": true,
     "missing_objects": [
-      "calculator"
+      "eraser"
     ],
     "visual_reference": true,
-    "benchmark_version": "2.1-visual-grounded"
+    "benchmark_version": "3.1-visual-counterfactual",
+    "existence_decision": {
+      "pair_id": "existence_08",
+      "queried_object": "eraser",
+      "observed": false,
+      "expected_action": "INVALID_TASK"
+    }
   }
 ]

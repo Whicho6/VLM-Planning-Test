@@ -6,7 +6,7 @@ from src.utils import read_json, write_json
 from src.vlm import MockVLM
 
 
-REQUIRED = {"task_id", "scene_id", "image", "image_condition", "actual_input_image", "instruction", "category", "prompt_mode", "ground_truth",
+REQUIRED = {"task_id", "scene_id", "image", "image_condition", "actual_input_image", "instruction", "category", "prompt_mode", "benchmark_version", "existence_decision", "spatial_decision", "multi_step_decision", "ground_truth",
             "raw_model_output", "parsed_output", "task_planning_success", "action_validity",
             "format_compliance", "hallucination", "hallucinated_references", "failure_type", "simulation"}
 
@@ -23,6 +23,7 @@ def test_result_files_and_required_fields(tmp_path, monkeypatch):
     assert read_json(out / "failure_cases.json")["cases"] == []
     metadata = read_json(out / "run_metadata.json")
     assert metadata["actual_api_calls"] == 0 and metadata["model_invocations"] == 80
+    assert metadata["benchmark_version"] == "3.1-visual-counterfactual"
 
 
 def test_resume_skips_successful_pairs(tmp_path, monkeypatch):
@@ -105,3 +106,14 @@ def test_api_failures_are_saved_with_complete_shape(tmp_path, monkeypatch):
     metadata = read_json(out / "run_metadata.json")
     assert metadata["actual_api_calls"] == 80
     assert metadata["successful_api_calls"] == 0 and metadata["failed_api_calls"] == 80
+
+
+def test_category_filter_runs_only_spatial_pairs(tmp_path, monkeypatch):
+    monkeypatch.setattr(run_evaluation, "plot", lambda *args: None)
+    out = run_evaluation.run("mock", output=tmp_path / "spatial", category="spatial")
+    rows = read_json(out / "raw_results.json")
+    assert len(rows) == 20
+    assert {row["category"] for row in rows} == {"spatial"}
+    metadata = read_json(out / "run_metadata.json")
+    assert metadata["category_filter"] == "spatial"
+    assert metadata["model_invocations"] == 20

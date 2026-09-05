@@ -1,0 +1,4703 @@
+{
+  "label": "真实 API 实验",
+  "count": 41,
+  "cases": [
+    {
+      "task_id": "task_025",
+      "scene_id": "scene_07",
+      "image": "data/images/scene_07.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有计算器，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_07",
+        "queried_object": "calculator",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "calculator",
+        "glasses",
+        "bottle",
+        "pen"
+      ],
+      "ground_truth": [
+        "PICK(calculator)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:28.895962+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "INVALID_TASK",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "calculator": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "pen"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.969,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 3,
+        "total_tokens": 270,
+        "completion_tokens_details": {
+          "text_tokens": 3
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-0bbb4fe3-8038-9da3-a66a-82acd8a522fa",
+      "completed_at_utc": "2026-09-05T13:18:29.860431+00:00"
+    },
+    {
+      "task_id": "task_016",
+      "scene_id": "scene_04",
+      "image": "data/images/scene_04.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_03",
+        "queried_object": "mouse",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "pen",
+        "calculator",
+        "tissue",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:32.486207+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，桌面上有键盘、一个黑色长条形物体（可能是鼠标）、一个白色圆柱形物体（可能是杯子或笔筒）、一个绿色小方块（可能是橡皮或装饰物），以及一个带线的设备（可能是充电器或数据线）。其中黑色长条形物体外形符合鼠标的典型特征（流线型、有左右按键轮廓、带连接线），可判断为鼠标。\n\n因此，照片中有鼠标，应执行“拿起它”。\n\n【最终操作计划】  \n拿起鼠标",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "mouse"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "pen": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "umbrella"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "mouse"
+        ],
+        "object_references": [
+          "mouse"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 2.687,
+      "token_usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 110,
+        "total_tokens": 351,
+        "completion_tokens_details": {
+          "text_tokens": 110
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 241,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-615becfe-84bd-904a-9f38-51af6bedae73",
+      "completed_at_utc": "2026-09-05T13:18:35.166139+00:00"
+    },
+    {
+      "task_id": "task_005",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_02",
+        "queried_object": "glasses",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "glasses",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:35.656344+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，画面中没有看到眼镜（glasses）这一物体。因此，根据指令“如果没有，就拒绝任务”，应拒绝执行。\n\n【最终操作计划】  \n任务无法完成，因为场景中缺少所需物体。",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.203,
+      "token_usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 48,
+        "total_tokens": 289,
+        "completion_tokens_details": {
+          "text_tokens": 48
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 241,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-aa651cf4-ab66-9b88-8dd8-5a7057dcaf60",
+      "completed_at_utc": "2026-09-05T13:18:36.859296+00:00"
+    },
+    {
+      "task_id": "task_024",
+      "scene_id": "scene_06",
+      "image": "data/images/scene_06.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有饮料瓶，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_05",
+        "queried_object": "bottle",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "umbrella",
+        "pen",
+        "eraser",
+        "calculator"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:36.861894+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，画面中有一个透明塑料瓶，瓶身有标签，看起来是饮料瓶（如矿泉水或饮料），符合“饮料瓶”的描述。因此，条件成立，应执行“拿起它”。\n\n【最终操作计划】  \n拿起饮料瓶",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "bottle"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "bottle"
+        ],
+        "object_references": [
+          "bottle"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.39,
+      "token_usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 53,
+        "total_tokens": 295,
+        "completion_tokens_details": {
+          "text_tokens": 53
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 242,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-6c63d72c-b851-92b6-af96-e60550dca3bf",
+      "completed_at_utc": "2026-09-05T13:18:38.242009+00:00"
+    },
+    {
+      "task_id": "task_020",
+      "scene_id": "scene_05",
+      "image": "data/images/scene_05.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有笔，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_04",
+        "queried_object": "pen",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "bottle",
+        "tissue",
+        "mouse",
+        "glasses"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:39.104277+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(pen)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "bottle": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "glasses"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "pen"
+        ],
+        "object_references": [
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.5,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 6,
+        "total_tokens": 273,
+        "completion_tokens_details": {
+          "text_tokens": 6
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-9d11a4aa-2032-9a36-a9df-f5c5f206b07b",
+      "completed_at_utc": "2026-09-05T13:18:39.609660+00:00"
+    },
+    {
+      "task_id": "task_020",
+      "scene_id": "scene_05",
+      "image": "data/images/scene_05.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有笔，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_04",
+        "queried_object": "pen",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "bottle",
+        "tissue",
+        "mouse",
+        "glasses"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:42.234200+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，桌面上有一个黑色的细长物体，外形符合笔的特征（可能是钢笔或签字笔），位于画面中央偏左位置，旁边有纸张和一个红色小物件。因此可以确认照片中存在“笔”。\n\n【最终操作计划】  \n拿起笔",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "bottle": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "glasses"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "pen"
+        ],
+        "object_references": [
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.562,
+      "token_usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 60,
+        "total_tokens": 301,
+        "completion_tokens_details": {
+          "text_tokens": 60
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 241,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-850dab53-ec0a-9b4c-a8a8-fde3d6a5ee1b",
+      "completed_at_utc": "2026-09-05T13:18:43.795980+00:00"
+    },
+    {
+      "task_id": "task_032",
+      "scene_id": "scene_08",
+      "image": "data/images/scene_08.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有计算器，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_07",
+        "queried_object": "calculator",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "eraser",
+        "umbrella",
+        "tissue",
+        "mouse"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:45.808022+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，画面中有一个计算器（calculator），位于桌面中央偏左位置，外形为灰白色长方形设备，有按键和显示屏，符合计算器特征。\n\n因此，任务条件成立，应执行“拿起它”。\n\n【最终操作计划】  \n拿起计算器",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "eraser": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "calculator"
+        ],
+        "object_references": [
+          "calculator"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.422,
+      "token_usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 55,
+        "total_tokens": 296,
+        "completion_tokens_details": {
+          "text_tokens": 55
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 241,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-a4f41598-4d5c-9723-8605-f989c2582bfd",
+      "completed_at_utc": "2026-09-05T13:18:47.227938+00:00"
+    },
+    {
+      "task_id": "task_036",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_10",
+        "queried_object": "mouse",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:52.394173+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，桌面上有一个黑色的电脑鼠标，位于键盘右侧、笔记本电脑左侧的位置。因此，条件“照片中有鼠标”成立，应执行“拿起它”。\n\n【最终操作计划】  \n拿起鼠标",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "mouse"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "mouse"
+        ],
+        "object_references": [
+          "mouse"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.078,
+      "token_usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 45,
+        "total_tokens": 286,
+        "completion_tokens_details": {
+          "text_tokens": 45
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 241,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-f3a56015-9d3c-9bd1-a99d-6220f4a7fa97",
+      "completed_at_utc": "2026-09-05T13:18:53.464392+00:00"
+    },
+    {
+      "task_id": "task_010",
+      "scene_id": "scene_03",
+      "image": "data/images/scene_03.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，就把饮料瓶放到眼镜右边；否则，把饮料瓶放到眼镜左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "bottle",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "bottle",
+        "target_object": "glasses",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "eraser",
+        "glasses",
+        "bottle"
+      ],
+      "ground_truth": [
+        "PICK(bottle)",
+        "PLACE_LEFT(bottle, glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "bottle",
+          "relation": "left",
+          "target": "glasses"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:54.238299+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：饮料瓶（plastic bottle）位于眼镜（glasses）的左侧。\n\n根据指令：“如果饮料瓶在眼镜左边，就把饮料瓶放到眼镜右边”，条件成立，因此应将饮料瓶移动到眼镜的右边。\n\n注意：机械夹爪一次只能拿一个物体，且放置前必须先抓取。当前场景无容器，只能在桌面上左右放置。\n\n操作步骤：\n1. 拿起饮料瓶；\n2. 把饮料瓶放到眼镜的右边。\n\n【最终操作计划】  \n拿起饮料瓶  \n把饮料瓶放到眼镜的右边",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "bottle"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "bottle",
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "bottle",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "bottle",
+          "bottle",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 3.234,
+      "token_usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 122,
+        "total_tokens": 379,
+        "completion_tokens_details": {
+          "text_tokens": 122
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 257,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-73fa9696-43ae-948f-8e13-6882bd0e0707",
+      "completed_at_utc": "2026-09-05T13:18:57.467523+00:00"
+    },
+    {
+      "task_id": "task_034",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和纸巾当前的位置：如果计算器在纸巾左边，就把计算器放到纸巾右边；否则，把计算器放到纸巾左边。",
+      "category": "spatial",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "calculator",
+        "target_object": "tissue",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:57.471658+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(calculator)\nPLACE_RIGHT(calculator, tissue)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "calculator",
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "right",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "right",
+            "tissue"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.703,
+      "token_usage": {
+        "prompt_tokens": 283,
+        "completion_tokens": 13,
+        "total_tokens": 296,
+        "completion_tokens_details": {
+          "text_tokens": 13
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 283,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-5bb8e231-4118-978c-8327-e3c48e7972d8",
+      "completed_at_utc": "2026-09-05T13:18:58.172847+00:00"
+    },
+    {
+      "task_id": "task_010",
+      "scene_id": "scene_03",
+      "image": "data/images/scene_03.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，就把饮料瓶放到眼镜右边；否则，把饮料瓶放到眼镜左边。",
+      "category": "spatial",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "bottle",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "bottle",
+        "target_object": "glasses",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "eraser",
+        "glasses",
+        "bottle"
+      ],
+      "ground_truth": [
+        "PICK(bottle)",
+        "PLACE_LEFT(bottle, glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "bottle",
+          "relation": "left",
+          "target": "glasses"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:18:58.177630+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(bottle)  \nPLACE_RIGHT(bottle, glasses)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "bottle"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "bottle",
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "bottle",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "bottle",
+          "bottle",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.719,
+      "token_usage": {
+        "prompt_tokens": 283,
+        "completion_tokens": 14,
+        "total_tokens": 297,
+        "completion_tokens_details": {
+          "text_tokens": 14
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 283,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-252e75e7-8140-96d7-8802-f81d4516f909",
+      "completed_at_utc": "2026-09-05T13:18:58.882511+00:00"
+    },
+    {
+      "task_id": "task_017",
+      "scene_id": "scene_05",
+      "image": "data/images/scene_05.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有饮料瓶，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_05",
+        "queried_object": "bottle",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "bottle",
+        "tissue",
+        "mouse",
+        "glasses"
+      ],
+      "ground_truth": [
+        "PICK(bottle)"
+      ],
+      "target_state": [
+        {
+          "object": "bottle",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:02.144263+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "INVALID_TASK",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "bottle": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "glasses"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.531,
+      "token_usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 3,
+        "total_tokens": 271,
+        "completion_tokens_details": {
+          "text_tokens": 3
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 268,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-c1c9ce88-adb6-955d-8e18-3a3de95c84e5",
+      "completed_at_utc": "2026-09-05T13:19:02.664642+00:00"
+    },
+    {
+      "task_id": "task_031",
+      "scene_id": "scene_08",
+      "image": "data/images/scene_08.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察鼠标和雨伞当前的位置：如果鼠标在雨伞左边，先把鼠标放到雨伞右边，再拿起雨伞；否则，先把鼠标放到雨伞左边，再拿起雨伞。",
+      "category": "multi_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "mouse",
+        "relation": "left",
+        "reference": "umbrella",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "mouse",
+        "target_object": "umbrella",
+        "placement": "left",
+        "followup_object": "umbrella"
+      },
+      "scene_objects": [
+        "eraser",
+        "umbrella",
+        "tissue",
+        "mouse"
+      ],
+      "ground_truth": [
+        "PICK(mouse)",
+        "PLACE_LEFT(mouse, umbrella)",
+        "PICK(umbrella)"
+      ],
+      "target_state": [
+        {
+          "object": "mouse",
+          "relation": "left",
+          "target": "umbrella"
+        },
+        {
+          "object": "umbrella",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:02.668461+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(mouse)  \nPLACE_RIGHT(mouse, umbrella)  \nPICK(umbrella)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "mouse"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "mouse",
+              "umbrella"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "umbrella"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "eraser": [
+            "left",
+            "umbrella"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "right",
+            "umbrella"
+          ]
+        },
+        "events": [
+          [
+            "mouse",
+            "right",
+            "umbrella"
+          ]
+        ],
+        "held": "umbrella",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "mouse",
+          "mouse",
+          "umbrella",
+          "umbrella"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.875,
+      "token_usage": {
+        "prompt_tokens": 293,
+        "completion_tokens": 19,
+        "total_tokens": 312,
+        "completion_tokens_details": {
+          "text_tokens": 19
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 293,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-0660d98c-3bce-9ab6-9b7a-d92e9349e5f0",
+      "completed_at_utc": "2026-09-05T13:19:03.542133+00:00"
+    },
+    {
+      "task_id": "task_033",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_09",
+        "queried_object": "tissue",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "tissue",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:05.017256+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "INVALID_TASK",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.547,
+      "token_usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 3,
+        "total_tokens": 271,
+        "completion_tokens_details": {
+          "text_tokens": 3
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 268,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-b8229b2d-9302-939b-a8ad-325921e8948c",
+      "completed_at_utc": "2026-09-05T13:19:05.558584+00:00"
+    },
+    {
+      "task_id": "task_002",
+      "scene_id": "scene_01",
+      "image": "data/images/scene_01.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察橡皮和纸巾当前的位置：如果橡皮在纸巾左边，就把橡皮放到纸巾右边；否则，把橡皮放到纸巾左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "eraser",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "eraser",
+        "target_object": "tissue",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "mouse",
+        "pen",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_LEFT(eraser, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "left",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:05.563287+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：橡皮（eraser）位于纸巾（tissue）的左边。根据指令，当橡皮在纸巾左边时，应把橡皮放到纸巾右边。\n\n【最终操作计划】  \n拿起橡皮  \n把橡皮放到纸巾的右边",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "eraser"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "eraser",
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "right",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "eraser",
+            "right",
+            "tissue"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "eraser",
+          "eraser",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.344,
+      "token_usage": {
+        "prompt_tokens": 261,
+        "completion_tokens": 59,
+        "total_tokens": 320,
+        "completion_tokens_details": {
+          "text_tokens": 59
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 261,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-906ebb9b-9208-9ec4-86bc-e861865cd8d5",
+      "completed_at_utc": "2026-09-05T13:19:06.897658+00:00"
+    },
+    {
+      "task_id": "task_012",
+      "scene_id": "scene_03",
+      "image": "data/images/scene_03.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_09",
+        "queried_object": "tissue",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "eraser",
+        "glasses",
+        "bottle"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:11.303705+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，画面中有一个白色长方形物体，位于左上角，外形类似一盒抽纸或纸巾盒。根据常见桌面物品判断，该物体应为“纸巾”。\n\n因此，条件成立：照片中有纸巾，应执行“拿起它”。\n\n【最终操作计划】  \n拿起纸巾",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "bottle"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "tissue"
+        ],
+        "object_references": [
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.344,
+      "token_usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 67,
+        "total_tokens": 309,
+        "completion_tokens_details": {
+          "text_tokens": 67
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 242,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-67bfc65c-f26c-9115-9798-812c04de0912",
+      "completed_at_utc": "2026-09-05T13:19:12.657094+00:00"
+    },
+    {
+      "task_id": "task_021",
+      "scene_id": "scene_06",
+      "image": "data/images/scene_06.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有雨伞，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_06",
+        "queried_object": "umbrella",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "umbrella",
+        "pen",
+        "eraser",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(umbrella)"
+      ],
+      "target_state": [
+        {
+          "object": "umbrella",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:12.662729+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，画面中没有雨伞。因此，根据指令要求，应拒绝任务。\n\n【最终操作计划】  \n任务无法完成，因为场景中缺少所需物体。",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.906,
+      "token_usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 37,
+        "total_tokens": 279,
+        "completion_tokens_details": {
+          "text_tokens": 37
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 242,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-ad582264-24b0-9c3b-84d2-9a1faadff728",
+      "completed_at_utc": "2026-09-05T13:19:13.558576+00:00"
+    },
+    {
+      "task_id": "task_003",
+      "scene_id": "scene_01",
+      "image": "data/images/scene_01.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察笔和纸巾当前的位置：如果笔在纸巾左边，先把笔放到纸巾右边，再拿起纸巾；否则，先把笔放到纸巾左边，再拿起纸巾。",
+      "category": "multi_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "pen",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "pen",
+        "target_object": "tissue",
+        "placement": "left",
+        "followup_object": "tissue"
+      },
+      "scene_objects": [
+        "tissue",
+        "mouse",
+        "pen",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(pen)",
+        "PLACE_LEFT(pen, tissue)",
+        "PICK(tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "pen",
+          "relation": "left",
+          "target": "tissue"
+        },
+        {
+          "object": "tissue",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:16.448674+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(pen)\nPLACE_RIGHT(pen, tissue)\nPICK(tissue)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "pen",
+              "tissue"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "right",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "pen",
+            "right",
+            "tissue"
+          ]
+        ],
+        "held": "tissue",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "pen",
+          "pen",
+          "tissue",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.797,
+      "token_usage": {
+        "prompt_tokens": 293,
+        "completion_tokens": 18,
+        "total_tokens": 311,
+        "completion_tokens_details": {
+          "text_tokens": 18
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 293,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-ad072306-459d-956d-af9b-ce068d44caaf",
+      "completed_at_utc": "2026-09-05T13:19:17.246970+00:00"
+    },
+    {
+      "task_id": "task_004",
+      "scene_id": "scene_01",
+      "image": "data/images/scene_01.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_02",
+        "queried_object": "glasses",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "mouse",
+        "pen",
+        "eraser"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:17.251740+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "首先观察图片，确认是否存在“眼镜”这一物体。从提供的图像来看，桌面上有：一个红色杯子、一个白色小盒子、一支笔、一个绿色小球、一个黄色小方块、一个蓝色圆柱体、一个黑色长条状物体（可能是手机或遥控器），以及背景中隐约可见的类似眼镜的物体——但需仔细判断。\n\n放大查看背景区域：在左上角靠近边缘处，有一副细框眼镜，镜腿朝右，镜片清晰可见，符合“眼镜”的定义。\n\n因此，照片中确实存在眼镜，应执行“拿起它”。\n\n【最终操作计划】  \n拿起眼镜",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "glasses"
+        ],
+        "object_references": [
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 2.563,
+      "token_usage": {
+        "prompt_tokens": 241,
+        "completion_tokens": 137,
+        "total_tokens": 378,
+        "completion_tokens_details": {
+          "text_tokens": 137
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 241,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-16f21cc3-8c6f-98cc-9e4d-6412072c562b",
+      "completed_at_utc": "2026-09-05T13:19:19.815627+00:00"
+    },
+    {
+      "task_id": "task_031",
+      "scene_id": "scene_08",
+      "image": "data/images/scene_08.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察鼠标和雨伞当前的位置：如果鼠标在雨伞左边，先把鼠标放到雨伞右边，再拿起雨伞；否则，先把鼠标放到雨伞左边，再拿起雨伞。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "mouse",
+        "relation": "left",
+        "reference": "umbrella",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "mouse",
+        "target_object": "umbrella",
+        "placement": "left",
+        "followup_object": "umbrella"
+      },
+      "scene_objects": [
+        "eraser",
+        "umbrella",
+        "tissue",
+        "mouse"
+      ],
+      "ground_truth": [
+        "PICK(mouse)",
+        "PLACE_LEFT(mouse, umbrella)",
+        "PICK(umbrella)"
+      ],
+      "target_state": [
+        {
+          "object": "mouse",
+          "relation": "left",
+          "target": "umbrella"
+        },
+        {
+          "object": "umbrella",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:19.820382+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：鼠标（mouse）位于雨伞（umbrella）的左侧。\n\n根据指令，当鼠标在雨伞左边时，应：\n1. 先把鼠标放到雨伞右边；\n2. 再拿起雨伞。\n\n当前场景中存在鼠标和雨伞，满足任务前提。\n\n【最终操作计划】  \n把鼠标放到雨伞的右边  \n拿起雨伞",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "mouse"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "mouse",
+              "umbrella"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "umbrella"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "eraser": [
+            "left",
+            "umbrella"
+          ],
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "right",
+            "umbrella"
+          ]
+        },
+        "events": [
+          [
+            "mouse",
+            "right",
+            "umbrella"
+          ]
+        ],
+        "held": "umbrella",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "mouse",
+          "mouse",
+          "umbrella",
+          "umbrella"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 2.485,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 80,
+        "total_tokens": 347,
+        "completion_tokens_details": {
+          "text_tokens": 80
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-1403897e-7d92-9e35-a0eb-1d842c6c39e0",
+      "completed_at_utc": "2026-09-05T13:19:22.303400+00:00"
+    },
+    {
+      "task_id": "task_005",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有眼镜，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_02",
+        "queried_object": "glasses",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "glasses",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:22.778906+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "INVALID_TASK",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.609,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 3,
+        "total_tokens": 270,
+        "completion_tokens_details": {
+          "text_tokens": 3
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-b3d3e5ba-4313-916d-8989-78f1d19cdae2",
+      "completed_at_utc": "2026-09-05T13:19:23.385800+00:00"
+    },
+    {
+      "task_id": "task_034",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和纸巾当前的位置：如果计算器在纸巾左边，就把计算器放到纸巾右边；否则，把计算器放到纸巾左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "calculator",
+        "target_object": "tissue",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:27.950337+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：计算器（calculator）在纸巾（tissue）的左边。\n\n根据指令：“如果计算器在纸巾左边，就把计算器放到纸巾右边”，条件成立，因此应将计算器移到纸巾右边。\n\n【最终操作计划】  \n拿起calculator  \n把calculator放到tissue的右边",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "calculator",
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "right",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "right",
+            "tissue"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 2.25,
+      "token_usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 63,
+        "total_tokens": 320,
+        "completion_tokens_details": {
+          "text_tokens": 63
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 257,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-b640ed95-095a-9781-b4db-d6af787e065d",
+      "completed_at_utc": "2026-09-05T13:19:30.207011+00:00"
+    },
+    {
+      "task_id": "task_006",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和眼镜当前的位置：如果计算器在眼镜左边，就把计算器放到眼镜右边；否则，把计算器放到眼镜左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "calculator",
+        "target_object": "glasses",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "glasses"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:31.519054+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "先观察图片中计算器和眼镜的相对位置。从图中可见，计算器（calculator）在眼镜（glasses）的左边。根据指令：“如果计算器在眼镜左边，就把计算器放到眼镜右边”，因此应执行：把计算器放到眼镜右边。\n\n【最终操作计划】  \n把计算器放到眼镜的右边",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "calculator",
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.75,
+      "token_usage": {
+        "prompt_tokens": 253,
+        "completion_tokens": 67,
+        "total_tokens": 320,
+        "completion_tokens_details": {
+          "text_tokens": 67
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 253,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-ee5342e7-eecf-9b95-a05f-1985437c9dda",
+      "completed_at_utc": "2026-09-05T13:19:33.265830+00:00"
+    },
+    {
+      "task_id": "task_038",
+      "scene_id": "scene_10",
+      "image": "data/images/scene_10.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察雨伞和笔当前的位置：如果雨伞在笔左边，就把雨伞放到笔右边；否则，把雨伞放到笔左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "umbrella",
+        "relation": "left",
+        "reference": "pen",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "umbrella",
+        "target_object": "pen",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "bottle",
+        "pen",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "PICK(umbrella)",
+        "PLACE_LEFT(umbrella, pen)"
+      ],
+      "target_state": [
+        {
+          "object": "umbrella",
+          "relation": "left",
+          "target": "pen"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:37.005750+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：雨伞（umbrella）位于画面左侧，笔（pen）位于画面右侧，因此雨伞在笔的左边。\n\n根据指令：“如果雨伞在笔左边，就把雨伞放到笔右边”，条件成立，应执行：把雨伞放到笔右边。\n\n注意：机械夹爪一次只能拿一个物体，需先拿起雨伞，再将其放到笔的右边。\n\n【最终操作计划】  \n拿起雨伞  \n把雨伞放到笔的右边",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "umbrella"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "umbrella",
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "right",
+            "pen"
+          ]
+        },
+        "events": [
+          [
+            "umbrella",
+            "right",
+            "pen"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "umbrella",
+          "umbrella",
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 2.157,
+      "token_usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 101,
+        "total_tokens": 358,
+        "completion_tokens_details": {
+          "text_tokens": 101
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 257,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-98942336-0218-9f7c-8516-482224e1ba6b",
+      "completed_at_utc": "2026-09-05T13:19:39.159495+00:00"
+    },
+    {
+      "task_id": "task_038",
+      "scene_id": "scene_10",
+      "image": "data/images/scene_10.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察雨伞和笔当前的位置：如果雨伞在笔左边，就把雨伞放到笔右边；否则，把雨伞放到笔左边。",
+      "category": "spatial",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "umbrella",
+        "relation": "left",
+        "reference": "pen",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "umbrella",
+        "target_object": "pen",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "bottle",
+        "pen",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "PICK(umbrella)",
+        "PLACE_LEFT(umbrella, pen)"
+      ],
+      "target_state": [
+        {
+          "object": "umbrella",
+          "relation": "left",
+          "target": "pen"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:39.909553+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(umbrella)\nPLACE_RIGHT(umbrella, pen)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "umbrella"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "umbrella",
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "right",
+            "pen"
+          ]
+        },
+        "events": [
+          [
+            "umbrella",
+            "right",
+            "pen"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "umbrella",
+          "umbrella",
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.796,
+      "token_usage": {
+        "prompt_tokens": 283,
+        "completion_tokens": 15,
+        "total_tokens": 298,
+        "completion_tokens_details": {
+          "text_tokens": 15
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 283,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-3ce03258-eaef-9855-82dc-ea3747ba18ff",
+      "completed_at_utc": "2026-09-05T13:19:40.695187+00:00"
+    },
+    {
+      "task_id": "task_040",
+      "scene_id": "scene_10",
+      "image": "data/images/scene_10.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有橡皮，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_08",
+        "queried_object": "eraser",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "bottle",
+        "pen",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:40.701519+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(eraser)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "eraser"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "umbrella"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "eraser"
+        ],
+        "object_references": [
+          "eraser"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.469,
+      "token_usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 7,
+        "total_tokens": 275,
+        "completion_tokens_details": {
+          "text_tokens": 7
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 268,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-6bbb92c3-f76a-9427-8e91-be8c9094b2c1",
+      "completed_at_utc": "2026-09-05T13:19:41.175541+00:00"
+    },
+    {
+      "task_id": "task_014",
+      "scene_id": "scene_04",
+      "image": "data/images/scene_04.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和纸巾当前的位置：如果计算器在纸巾左边，就把计算器放到纸巾右边；否则，把计算器放到纸巾左边。",
+      "category": "spatial",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": true,
+        "selected_branch": "if",
+        "moved_object": "calculator",
+        "target_object": "tissue",
+        "placement": "right"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "pen",
+        "calculator",
+        "tissue",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_RIGHT(calculator, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "right",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:41.181179+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "先观察图片中计算器和纸巾的相对位置：\n\n- 图中可见：纸巾（tissue）在左侧，计算器（calculator）在右侧。  \n  即：**计算器在纸巾右边**。\n\n根据指令：“如果计算器在纸巾左边，就把计算器放到纸巾右边；否则，把计算器放到纸巾左边。”\n\n当前条件不满足“计算器在纸巾左边”，因此执行“否则”分支：**把计算器放到纸巾左边**。\n\n注意：机械夹爪一次只能拿一个物体，需先拿起计算器，再将其放到纸巾左边。\n\n【最终操作计划】  \n拿起calculator  \n把calculator放到tissue的左边",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_LEFT",
+            "args": [
+              "calculator",
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "pen": [
+            "left",
+            "calculator"
+          ],
+          "tissue": [
+            "left",
+            "umbrella"
+          ],
+          "calculator": [
+            "left",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "left",
+            "tissue"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 2.39,
+      "token_usage": {
+        "prompt_tokens": 257,
+        "completion_tokens": 139,
+        "total_tokens": 396,
+        "completion_tokens_details": {
+          "text_tokens": 139
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 257,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-192ce27d-08fc-9f64-8bef-c837081756e2",
+      "completed_at_utc": "2026-09-05T13:19:43.569940+00:00"
+    },
+    {
+      "task_id": "task_023",
+      "scene_id": "scene_06",
+      "image": "data/images/scene_06.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和笔当前的位置：如果计算器在笔左边，先把计算器放到笔右边，再拿起笔；否则，先把计算器放到笔左边，再拿起笔。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "pen",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "calculator",
+        "target_object": "pen",
+        "placement": "left",
+        "followup_object": "pen"
+      },
+      "scene_objects": [
+        "umbrella",
+        "pen",
+        "eraser",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, pen)",
+        "PICK(pen)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "pen"
+        },
+        {
+          "object": "pen",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:46.718198+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "首先观察图片中计算器（calculator）和笔（pen）的相对位置。从图中可见，计算器在笔的左边。\n\n根据指令：“如果计算器在笔左边，先把计算器放到笔右边，再拿起笔”，因此应执行以下步骤：\n1. 把计算器放到笔的右边；\n2. 然后拿起笔。\n\n注意：机械夹爪一次只能拿一个物体，放置前必须先抓取。所以第一步需先“拿起计算器”，再“把计算器放到笔的右边”；第二步再“拿起笔”。\n\n【最终操作计划】  \n拿起calculator  \n把calculator放到pen的右边  \n拿起pen",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "calculator",
+              "pen"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "pen"
+          ],
+          "eraser": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "right",
+            "pen"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "right",
+            "pen"
+          ]
+        ],
+        "held": "pen",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "pen",
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 3.531,
+      "token_usage": {
+        "prompt_tokens": 261,
+        "completion_tokens": 134,
+        "total_tokens": 395,
+        "completion_tokens_details": {
+          "text_tokens": 134
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 261,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-a586591f-40f0-9c8a-baf0-9fe326028580",
+      "completed_at_utc": "2026-09-05T13:19:50.240987+00:00"
+    },
+    {
+      "task_id": "task_021",
+      "scene_id": "scene_06",
+      "image": "data/images/scene_06.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有雨伞，就拿起它；如果没有，就拒绝任务。",
+      "category": "single_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_06",
+        "queried_object": "umbrella",
+        "observed": true,
+        "expected_action": "PICK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "umbrella",
+        "pen",
+        "eraser",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(umbrella)"
+      ],
+      "target_state": [
+        {
+          "object": "umbrella",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:50.246998+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "INVALID_TASK",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "INVALID_TASK",
+            "args": []
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 0,
+      "failure_type": [
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": []
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.469,
+      "token_usage": {
+        "prompt_tokens": 268,
+        "completion_tokens": 3,
+        "total_tokens": 271,
+        "completion_tokens_details": {
+          "text_tokens": 3
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 268,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-688dce35-e972-96cb-85f4-a04c1d6a4da2",
+      "completed_at_utc": "2026-09-05T13:19:50.710201+00:00"
+    },
+    {
+      "task_id": "task_023",
+      "scene_id": "scene_06",
+      "image": "data/images/scene_06.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和笔当前的位置：如果计算器在笔左边，先把计算器放到笔右边，再拿起笔；否则，先把计算器放到笔左边，再拿起笔。",
+      "category": "multi_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "pen",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "calculator",
+        "target_object": "pen",
+        "placement": "left",
+        "followup_object": "pen"
+      },
+      "scene_objects": [
+        "umbrella",
+        "pen",
+        "eraser",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, pen)",
+        "PICK(pen)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "pen"
+        },
+        {
+          "object": "pen",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:50.716678+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(calculator)  \nPLACE_RIGHT(calculator, pen)  \nPICK(pen)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "calculator",
+              "pen"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "pen"
+          ],
+          "eraser": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "right",
+            "pen"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "right",
+            "pen"
+          ]
+        ],
+        "held": "pen",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "pen",
+          "pen"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.813,
+      "token_usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 20,
+        "total_tokens": 307,
+        "completion_tokens_details": {
+          "text_tokens": 20
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 287,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-88ddf68b-7b61-9db8-9025-3e11e16ac6aa",
+      "completed_at_utc": "2026-09-05T13:19:51.529949+00:00"
+    },
+    {
+      "task_id": "task_007",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，先把饮料瓶放到眼镜右边，再拿起眼镜；否则，先把饮料瓶放到眼镜左边，再拿起眼镜。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "bottle",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "bottle",
+        "target_object": "glasses",
+        "placement": "left",
+        "followup_object": "glasses"
+      },
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(bottle)",
+        "PLACE_LEFT(bottle, glasses)",
+        "PICK(glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "bottle",
+          "relation": "left",
+          "target": "glasses"
+        },
+        {
+          "object": "glasses",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:51.536318+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "先观察图片中饮料瓶和眼镜的相对位置。从图中可见，饮料瓶在眼镜的**左边**（以观看者视角），因此满足“如果饮料瓶在眼镜左边”的条件。\n\n根据指令：\n- 先把饮料瓶放到眼镜右边；\n- 再拿起眼镜。\n\n注意：当前桌面还有其他物体（如书、笔、杯子等），但任务只涉及饮料瓶和眼镜，且机械夹爪一次只能拿一个物体，放置前必须先抓取。所以操作顺序应为：\n1. 拿起饮料瓶；\n2. 把饮料瓶放到眼镜右边；\n3. 拿起眼镜。\n\n【最终操作计划】  \n拿起饮料瓶  \n把饮料瓶放到眼镜的右边  \n拿起眼镜",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "bottle"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "bottle",
+              "glasses"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "calculator"
+          ],
+          "bottle": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "bottle",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": "glasses",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "bottle",
+          "bottle",
+          "glasses",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 3.062,
+      "token_usage": {
+        "prompt_tokens": 265,
+        "completion_tokens": 158,
+        "total_tokens": 423,
+        "completion_tokens_details": {
+          "text_tokens": 158
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 265,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-f5879a7a-7f81-99c9-8b91-7471d8fef5f9",
+      "completed_at_utc": "2026-09-05T13:19:54.588884+00:00"
+    },
+    {
+      "task_id": "task_035",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察橡皮和眼镜当前的位置：如果橡皮在眼镜左边，先把橡皮放到眼镜右边，再拿起眼镜；否则，先把橡皮放到眼镜左边，再拿起眼镜。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "eraser",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "eraser",
+        "target_object": "glasses",
+        "placement": "left",
+        "followup_object": "glasses"
+      },
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_LEFT(eraser, glasses)",
+        "PICK(glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "left",
+          "target": "glasses"
+        },
+        {
+          "object": "glasses",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:19:55.554440+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：橡皮（eraser）在眼镜（glasses）的左边。\n\n根据指令：“如果橡皮在眼镜左边，先把橡皮放到眼镜右边，再拿起眼镜”。\n\n因此，第一步：把橡皮放到眼镜右边；  \n第二步：拿起眼镜。\n\n【最终操作计划】  \n把橡皮放到眼镜的右边  \n拿起眼镜",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "eraser"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "eraser",
+              "glasses"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "eraser",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": "glasses",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "eraser",
+          "eraser",
+          "glasses",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.75,
+      "token_usage": {
+        "prompt_tokens": 265,
+        "completion_tokens": 74,
+        "total_tokens": 339,
+        "completion_tokens_details": {
+          "text_tokens": 74
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 265,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-0dec10cc-4490-935f-9d76-09595378683b",
+      "completed_at_utc": "2026-09-05T13:19:57.309830+00:00"
+    },
+    {
+      "task_id": "task_036",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_10",
+        "queried_object": "mouse",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:03.076733+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(mouse)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "mouse"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "glasses": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "mouse"
+        ],
+        "object_references": [
+          "mouse"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.469,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 5,
+        "total_tokens": 272,
+        "completion_tokens_details": {
+          "text_tokens": 5
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-8ac9e7f2-2cc6-9663-9940-7c0189defaf2",
+      "completed_at_utc": "2026-09-05T13:20:03.547506+00:00"
+    },
+    {
+      "task_id": "task_040",
+      "scene_id": "scene_10",
+      "image": "data/images/scene_10.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有橡皮，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_08",
+        "queried_object": "eraser",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "mouse",
+        "bottle",
+        "pen",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:03.554241+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，桌面上有以下物体：一支铅笔、一把尺子、一个卷笔刀、一块橡皮、一个订书机。其中确实存在一块橡皮。\n\n因此，根据指令“如果照片中有橡皮，就拿起它”，应执行拿起橡皮的操作。\n\n【最终操作计划】  \n拿起橡皮",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "eraser"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "umbrella"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "eraser"
+        ],
+        "object_references": [
+          "eraser"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.875,
+      "token_usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 70,
+        "total_tokens": 312,
+        "completion_tokens_details": {
+          "text_tokens": 70
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 242,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-b6501c9c-467a-9074-85d6-2ef7428b859b",
+      "completed_at_utc": "2026-09-05T13:20:05.439397+00:00"
+    },
+    {
+      "task_id": "task_003",
+      "scene_id": "scene_01",
+      "image": "data/images/scene_01.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察笔和纸巾当前的位置：如果笔在纸巾左边，先把笔放到纸巾右边，再拿起纸巾；否则，先把笔放到纸巾左边，再拿起纸巾。",
+      "category": "multi_step",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "pen",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "pen",
+        "target_object": "tissue",
+        "placement": "left",
+        "followup_object": "tissue"
+      },
+      "scene_objects": [
+        "tissue",
+        "mouse",
+        "pen",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(pen)",
+        "PLACE_LEFT(pen, tissue)",
+        "PICK(tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "pen",
+          "relation": "left",
+          "target": "tissue"
+        },
+        {
+          "object": "tissue",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:05.447208+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片：笔（pen）在纸巾（tissue）的左边。\n\n根据指令：“如果笔在纸巾左边，先把笔放到纸巾右边，再拿起纸巾”。\n\n因此，第一步：把笔放到纸巾的右边；  \n第二步：拿起纸巾。\n\n【最终操作计划】  \n把笔放到纸巾的右边  \n拿起纸巾",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "pen"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "pen",
+              "tissue"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "mouse": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "right",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "pen",
+            "right",
+            "tissue"
+          ]
+        ],
+        "held": "tissue",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "pen",
+          "pen",
+          "tissue",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.891,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 77,
+        "total_tokens": 344,
+        "completion_tokens_details": {
+          "text_tokens": 77
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-168279f3-0463-96d7-b79a-63f099fc3eed",
+      "completed_at_utc": "2026-09-05T13:20:07.340379+00:00"
+    },
+    {
+      "task_id": "task_006",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察计算器和眼镜当前的位置：如果计算器在眼镜左边，就把计算器放到眼镜右边；否则，把计算器放到眼镜左边。",
+      "category": "spatial",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "calculator",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "calculator",
+        "target_object": "glasses",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(calculator)",
+        "PLACE_LEFT(calculator, glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "calculator",
+          "relation": "left",
+          "target": "glasses"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:08.533935+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(calculator)  \nPLACE_RIGHT(calculator, glasses)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "calculator"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "calculator",
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "calculator",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "calculator",
+          "calculator",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.687,
+      "token_usage": {
+        "prompt_tokens": 279,
+        "completion_tokens": 14,
+        "total_tokens": 293,
+        "completion_tokens_details": {
+          "text_tokens": 14
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 279,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-b48a3ecc-1b04-9470-a7a0-8db725635be1",
+      "completed_at_utc": "2026-09-05T13:20:09.222131+00:00"
+    },
+    {
+      "task_id": "task_035",
+      "scene_id": "scene_09",
+      "image": "data/images/scene_09.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察橡皮和眼镜当前的位置：如果橡皮在眼镜左边，先把橡皮放到眼镜右边，再拿起眼镜；否则，先把橡皮放到眼镜左边，再拿起眼镜。",
+      "category": "multi_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "eraser",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "eraser",
+        "target_object": "glasses",
+        "placement": "left",
+        "followup_object": "glasses"
+      },
+      "scene_objects": [
+        "tissue",
+        "glasses",
+        "calculator",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_LEFT(eraser, glasses)",
+        "PICK(glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "left",
+          "target": "glasses"
+        },
+        {
+          "object": "glasses",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:09.242283+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(eraser)  \nPLACE_RIGHT(eraser, glasses)  \nPICK(glasses)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "eraser"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "eraser",
+              "glasses"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "glasses"
+          ],
+          "calculator": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "eraser",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": "glasses",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "eraser",
+          "eraser",
+          "glasses",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.813,
+      "token_usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 22,
+        "total_tokens": 313,
+        "completion_tokens_details": {
+          "text_tokens": 22
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 291,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-a3aa0454-610a-9b75-a8b0-4eb7a19df454",
+      "completed_at_utc": "2026-09-05T13:20:10.054920+00:00"
+    },
+    {
+      "task_id": "task_007",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察饮料瓶和眼镜当前的位置：如果饮料瓶在眼镜左边，先把饮料瓶放到眼镜右边，再拿起眼镜；否则，先把饮料瓶放到眼镜左边，再拿起眼镜。",
+      "category": "multi_step",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": null,
+      "multi_step_decision": {
+        "subject": "bottle",
+        "relation": "left",
+        "reference": "glasses",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "bottle",
+        "target_object": "glasses",
+        "placement": "left",
+        "followup_object": "glasses"
+      },
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "PICK(bottle)",
+        "PLACE_LEFT(bottle, glasses)",
+        "PICK(glasses)"
+      ],
+      "target_state": [
+        {
+          "object": "bottle",
+          "relation": "left",
+          "target": "glasses"
+        },
+        {
+          "object": "glasses",
+          "relation": "held",
+          "target": null
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:10.062375+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(bottle)  \nPLACE_RIGHT(bottle, glasses)  \nPICK(glasses)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "bottle"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "bottle",
+              "glasses"
+            ]
+          },
+          {
+            "action": "PICK",
+            "args": [
+              "glasses"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 4,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "umbrella": [
+            "left",
+            "calculator"
+          ],
+          "bottle": [
+            "right",
+            "glasses"
+          ]
+        },
+        "events": [
+          [
+            "bottle",
+            "right",
+            "glasses"
+          ]
+        ],
+        "held": "glasses",
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "bottle",
+          "bottle",
+          "glasses",
+          "glasses"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.734,
+      "token_usage": {
+        "prompt_tokens": 291,
+        "completion_tokens": 20,
+        "total_tokens": 311,
+        "completion_tokens_details": {
+          "text_tokens": 20
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 291,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-acc3ed70-f58d-9f99-ba1f-ecbe49a6aa8f",
+      "completed_at_utc": "2026-09-05T13:20:10.799823+00:00"
+    },
+    {
+      "task_id": "task_016",
+      "scene_id": "scene_04",
+      "image": "data/images/scene_04.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有鼠标，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_03",
+        "queried_object": "mouse",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "pen",
+        "calculator",
+        "tissue",
+        "umbrella"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:13.670570+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(mouse)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "mouse"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "pen": [
+            "left",
+            "calculator"
+          ],
+          "calculator": [
+            "left",
+            "tissue"
+          ],
+          "tissue": [
+            "left",
+            "umbrella"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "mouse"
+        ],
+        "object_references": [
+          "mouse"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.5,
+      "token_usage": {
+        "prompt_tokens": 267,
+        "completion_tokens": 5,
+        "total_tokens": 272,
+        "completion_tokens_details": {
+          "text_tokens": 5
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 267,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-05c002a5-4f42-9e4c-b64d-50c371e0ca0c",
+      "completed_at_utc": "2026-09-05T13:20:14.176897+00:00"
+    },
+    {
+      "task_id": "task_002",
+      "scene_id": "scene_01",
+      "image": "data/images/scene_01.jpg",
+      "image_condition": "text_only",
+      "instruction": "观察橡皮和纸巾当前的位置：如果橡皮在纸巾左边，就把橡皮放到纸巾右边；否则，把橡皮放到纸巾左边。",
+      "category": "spatial",
+      "prompt_mode": "structured",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": null,
+      "spatial_decision": {
+        "subject": "eraser",
+        "relation": "left",
+        "reference": "tissue",
+        "observed": false,
+        "selected_branch": "else",
+        "moved_object": "eraser",
+        "target_object": "tissue",
+        "placement": "left"
+      },
+      "multi_step_decision": null,
+      "scene_objects": [
+        "tissue",
+        "mouse",
+        "pen",
+        "eraser"
+      ],
+      "ground_truth": [
+        "PICK(eraser)",
+        "PLACE_LEFT(eraser, tissue)"
+      ],
+      "target_state": [
+        {
+          "object": "eraser",
+          "relation": "left",
+          "target": "tissue"
+        }
+      ],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:14.888050+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "PICK(eraser)  \nPLACE_RIGHT(eraser, tissue)",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "eraser"
+            ]
+          },
+          {
+            "action": "PLACE_RIGHT",
+            "args": [
+              "eraser",
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": true,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": false,
+      "hallucinated_references": 0,
+      "object_reference_count": 3,
+      "failure_type": [
+        "wrong_direction",
+        "wrong_condition_branch"
+      ],
+      "simulation": {
+        "state": {
+          "tissue": [
+            "left",
+            "mouse"
+          ],
+          "mouse": [
+            "left",
+            "pen"
+          ],
+          "pen": [
+            "left",
+            "eraser"
+          ],
+          "eraser": [
+            "right",
+            "tissue"
+          ]
+        },
+        "events": [
+          [
+            "eraser",
+            "right",
+            "tissue"
+          ]
+        ],
+        "held": null,
+        "invalid": [],
+        "hallucinated_objects": [],
+        "object_references": [
+          "eraser",
+          "eraser",
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 0.75,
+      "token_usage": {
+        "prompt_tokens": 287,
+        "completion_tokens": 16,
+        "total_tokens": 303,
+        "completion_tokens_details": {
+          "text_tokens": 16
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 287,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-093b671d-16ae-950f-84f2-503c68502fad",
+      "completed_at_utc": "2026-09-05T13:20:15.634186+00:00"
+    },
+    {
+      "task_id": "task_008",
+      "scene_id": "scene_02",
+      "image": "data/images/scene_02.jpg",
+      "image_condition": "text_only",
+      "instruction": "如果照片中有纸巾，就拿起它；如果没有，就拒绝任务。",
+      "category": "impossible",
+      "prompt_mode": "free_form",
+      "benchmark_version": "3.1-visual-counterfactual",
+      "existence_decision": {
+        "pair_id": "existence_01",
+        "queried_object": "tissue",
+        "observed": false,
+        "expected_action": "INVALID_TASK"
+      },
+      "spatial_decision": null,
+      "multi_step_decision": null,
+      "scene_objects": [
+        "glasses",
+        "bottle",
+        "umbrella",
+        "calculator"
+      ],
+      "ground_truth": [
+        "INVALID_TASK"
+      ],
+      "target_state": [],
+      "model": "qwen3-vl-plus",
+      "api_error": null,
+      "started_at_utc": "2026-09-05T13:20:15.642207+00:00",
+      "actual_input_image": null,
+      "raw_model_output": "观察图片，画面中有一个白色长方形物体，位于左上角，外形和位置符合纸巾盒的常见特征（如抽纸盒），可合理判断为“纸巾”。\n\n因此，条件成立：照片中有纸巾，应执行“拿起它”。\n\n【最终操作计划】  \n拿起纸巾",
+      "parsed_output": {
+        "actions": [
+          {
+            "action": "PICK",
+            "args": [
+              "tissue"
+            ]
+          }
+        ],
+        "errors": [],
+        "unparsed": [],
+        "normalizations": []
+      },
+      "task_planning_success": false,
+      "action_validity": false,
+      "format_compliance": true,
+      "response_nonempty": true,
+      "hallucination": true,
+      "hallucinated_references": 1,
+      "object_reference_count": 1,
+      "failure_type": [
+        "object_hallucination",
+        "wrong_existence_decision"
+      ],
+      "simulation": {
+        "state": {
+          "glasses": [
+            "left",
+            "bottle"
+          ],
+          "bottle": [
+            "left",
+            "umbrella"
+          ],
+          "umbrella": [
+            "left",
+            "calculator"
+          ]
+        },
+        "events": [],
+        "held": null,
+        "invalid": [
+          "object_hallucination"
+        ],
+        "hallucinated_objects": [
+          "tissue"
+        ],
+        "object_references": [
+          "tissue"
+        ]
+      },
+      "api_attempts": 1,
+      "duration_seconds": 1.547,
+      "token_usage": {
+        "prompt_tokens": 242,
+        "completion_tokens": 66,
+        "total_tokens": 308,
+        "completion_tokens_details": {
+          "text_tokens": 66
+        },
+        "prompt_tokens_details": {
+          "text_tokens": 242,
+          "cached_tokens": 0
+        }
+      },
+      "provider_request_id": "chatcmpl-7e0a4bec-c7ce-9a26-ab5d-0647bbc9a598",
+      "completed_at_utc": "2026-09-05T13:20:17.185030+00:00"
+    }
+  ]
+}

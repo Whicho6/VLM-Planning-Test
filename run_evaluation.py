@@ -20,7 +20,7 @@ from src.vlm import CompatibleVLM, MockVLM
 CATEGORIES = ["single_step", "spatial", "multi_step", "impossible"]
 MODES = ["free_form", "structured"]
 RETRYABLE = ("HTTP 429", "HTTP 500", "HTTP 502", "HTTP 503", "HTTP 504", "network_error_or_timeout")
-EVALUATION_VERSION = "2.1"
+EVALUATION_VERSION = "3.1"
 
 
 class CallFailed(RuntimeError):
@@ -166,9 +166,10 @@ def input_image(task, tasks, condition):
     return ROOT / task["image"]
 
 
-def dry_run(backend="real", resume=None, image_condition="correct"):
-    scenes, tasks = load_benchmark()
-    errors = validate(scenes, tasks)
+def dry_run(backend="real", resume=None, image_condition="correct", category=None):
+    scenes, all_tasks = load_benchmark()
+    errors = validate(scenes, all_tasks)
+    tasks = [t for t in all_tasks if category is None or t["category"] == category]
     if backend == "real":
         errors += image_issues(scenes, require_verified=True)
         try:
@@ -188,7 +189,7 @@ def dry_run(backend="real", resume=None, image_condition="correct"):
         else:
             completed = sum(not r.get("api_error") for r in read_json(path))
     report = {"ok": not errors, "backend": backend, "model": model, "endpoint": endpoint,
-              "image_condition": image_condition,
+              "image_condition": image_condition, "category_filter": category,
               "scenes": len(scenes), "tasks": len(tasks), "planned_pairs": len(tasks) * len(MODES),
               "successful_checkpoint_pairs": completed, "pending_pairs": len(tasks) * len(MODES) - completed,
               "errors": errors}
@@ -196,11 +197,12 @@ def dry_run(backend="real", resume=None, image_condition="correct"):
     return report
 
 
-def run(backend="mock", output=None, resume=None, max_attempts=3, image_condition="correct"):
+def run(backend="mock", output=None, resume=None, max_attempts=3, image_condition="correct", category=None):
     if output and resume:
         raise ValueError("--output 与 --resume 不能同时使用。")
-    scenes, tasks = load_benchmark()
-    errors = validate(scenes, tasks)
+    scenes, all_tasks = load_benchmark()
+    errors = validate(scenes, all_tasks)
+    tasks = [t for t in all_tasks if category is None or t["category"] == category]
     if backend == "real":
         errors += image_issues(scenes, require_verified=True)
     if errors:
@@ -217,8 +219,10 @@ def run(backend="mock", output=None, resume=None, max_attempts=3, image_conditio
             raise ValueError("续跑目录不存在。")
         metadata = read_json(out / "run_metadata.json")
         rows = read_json(out / "raw_results.json")
-        if metadata.get("backend") != backend or metadata.get("model") != model.model or metadata.get("image_condition", "correct") != image_condition:
-            raise ValueError("续跑目录的 backend 或模型与当前配置不一致。")
+        if (metadata.get("backend") != backend or metadata.get("model") != model.model
+                or metadata.get("image_condition", "correct") != image_condition
+                or metadata.get("category_filter") != category):
+            raise ValueError("续跑目录的 backend、模型、图片条件或类别筛选与当前配置不一致。")
         if metadata.get("dataset_sha256") != data_hashes["dataset_sha256"] or metadata.get("image_sha256") != data_hashes["image_sha256"]:
             raise ValueError("数据或图片已变化，不能续跑旧实验。")
         prior_elapsed = float(metadata.get("total_elapsed_seconds", 0))
@@ -229,7 +233,9 @@ def run(backend="mock", output=None, resume=None, max_attempts=3, image_conditio
         rows = []
         metadata = {"label": label, "backend": backend, "model": model.model, "endpoint": getattr(model, "base_url", None),
                     "created_at_utc": utc_now(), "status": "running", "seed": 42, "image_condition": image_condition,
+                    "category_filter": category,
                     "evaluation_version": EVALUATION_VERSION,
+                    "benchmark_version": tasks[0].get("benchmark_version"),
                     "temperature": 0, "max_tokens": 512, "max_attempts_per_pair": max_attempts,
                     "prompts": {"free_form": FREE_FORM, "structured": STRUCTURED}, **data_hashes,
                     "python": platform.python_version(),
@@ -253,6 +259,10 @@ def run(backend="mock", output=None, resume=None, max_attempts=3, image_conditio
             base = {"task_id": task["id"], "scene_id": task["scene_id"], "image": task["image"],
                     "image_condition": image_condition,
                     "instruction": task["instruction"], "category": task["category"], "prompt_mode": mode,
+                    "benchmark_version": task.get("benchmark_version"),
+                    "existence_decision": task.get("existence_decision"),
+                    "spatial_decision": task.get("spatial_decision"),
+                    "multi_step_decision": task.get("multi_step_decision"),
                     "scene_objects": task["objects"], "ground_truth": task["ground_truth"], "target_state": task["target_state"],
                     "model": model.model, "api_error": None, "started_at_utc": utc_now()}
             try:
@@ -301,10 +311,12 @@ if __name__ == "__main__":
     parser.add_argument("--dry-run", action="store_true", help="只检查数据、照片和配置，不调用 API。")
     parser.add_argument("--image-condition", choices=["correct", "text_only", "shuffled"], default="correct",
                         help="模型接收正确图片、无图片或确定性错配图片。每次运行只使用一种条件。")
+    parser.add_argument("--category", choices=CATEGORIES,
+                        help="只运行一个任务类别；省略时运行全部 40 条任务。")
     args = parser.parse_args()
     try:
         if args.dry_run:
-            raise SystemExit(0 if dry_run(args.backend, args.resume, args.image_condition)["ok"] else 1)
-        run(args.backend, args.output, args.resume, args.max_attempts, args.image_condition)
+            raise SystemExit(0 if dry_run(args.backend, args.resume, args.image_condition, args.category)["ok"] else 1)
+        run(args.backend, args.output, args.resume, args.max_attempts, args.image_condition, args.category)
     except (ValueError, OSError) as exc:
         raise SystemExit(str(exc))

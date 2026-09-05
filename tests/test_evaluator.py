@@ -15,7 +15,7 @@ def test_all_ground_truth(method):
         assert evaluate(t, scene, model.plan(t['image'], t['instruction'], method), method)['task_planning_success']
 
 
-@pytest.mark.parametrize('output,failure', [('PICK(calculator)', 'object_hallucination'), ('PLACE_IN(tissue, mouse)', 'invalid_precondition'), ('PICK(tissue)\nPICK(mouse)', 'hand_occupied'), ('PICK(mouse)', 'incorrect_target_state'), ('INVALID_TASK', 'incorrect_target_state')])
+@pytest.mark.parametrize('output,failure', [('PICK(calculator)', 'object_hallucination'), ('PLACE_IN(tissue, mouse)', 'invalid_precondition'), ('PICK(tissue)\nPICK(mouse)', 'hand_occupied'), ('PICK(mouse)', 'incorrect_target_state'), ('INVALID_TASK', 'wrong_existence_decision')])
 def test_wrong_plans(output, failure):
     result = evaluate(TASKS[0], SCENES[0], output, 'structured')
     assert not result['task_planning_success']
@@ -49,3 +49,44 @@ def test_metrics_denominators():
 def test_format_separate_from_semantics():
     r = evaluate(TASKS[0], SCENES[0], 'I would somehow do it.', 'free_form')
     assert r['response_nonempty'] and not r['format_compliance'] and not r['action_validity'] and not r['task_planning_success']
+
+
+def test_spatial_failure_explains_wrong_branch():
+    task = TASKS[1]
+    scene = SCENES[0]
+    wrong = 'PICK(eraser)\nPLACE_RIGHT(eraser, tissue)'
+    result = evaluate(task, scene, wrong, 'structured')
+    assert not result['task_planning_success']
+    assert 'wrong_direction' in result['failure_type']
+    assert 'wrong_condition_branch' in result['failure_type']
+
+
+def test_spatial_failure_explains_wrong_objects():
+    task = TASKS[1]
+    scene = SCENES[0]
+    wrong = 'PICK(pen)\nPLACE_LEFT(pen, mouse)'
+    result = evaluate(task, scene, wrong, 'structured')
+    assert not result['task_planning_success']
+    assert 'wrong_moved_object' in result['failure_type']
+    assert 'wrong_target_object' in result['failure_type']
+
+
+def test_existence_failure_explains_image_decision():
+    present = TASKS[0]
+    result = evaluate(present, SCENES[0], 'INVALID_TASK', 'structured')
+    assert 'wrong_existence_decision' in result['failure_type']
+    impossible = TASKS[3]
+    result = evaluate(impossible, SCENES[0], 'PICK(mouse)', 'structured')
+    assert 'wrong_existence_decision' in result['failure_type']
+
+
+def test_multi_step_failure_explains_wrong_branch_and_followup():
+    task = TASKS[2]
+    decision = task['multi_step_decision']
+    wrong_direction = 'left' if decision['placement'] == 'right' else 'right'
+    output = (f"PICK({decision['moved_object']})\n"
+              f"PLACE_{wrong_direction.upper()}({decision['moved_object']}, {decision['target_object']})\n"
+              f"PICK({decision['moved_object']})")
+    result = evaluate(task, SCENES[0], output, 'structured')
+    assert 'wrong_condition_branch' in result['failure_type']
+    assert 'wrong_followup_object' in result['failure_type']
